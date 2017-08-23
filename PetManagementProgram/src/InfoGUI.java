@@ -17,11 +17,11 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
 
 public class InfoGUI {
 
 	private JFrame frame;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -189,8 +189,9 @@ public class InfoGUI {
 		frame.getContentPane().add(panel_13);
 		panel_13.setLayout(new CardLayout(0, 0));
 		
-		JScrollPane scrollPane = new JScrollPane();
-		panel_13.add(scrollPane, "name_10465814044054");
+		textField_4 = new JTextField();
+		panel_13.add(textField_4, "name_11457114844890");
+		textField_4.setColumns(10);
 		
 		JPanel panel_14 = new JPanel();
 		panel_14.setBounds(334, 166, 112, 30);
