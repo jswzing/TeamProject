@@ -12,13 +12,11 @@ import javax.swing.JTextField;
 import java.awt.SystemColor;
 import java.awt.Color;
 import java.awt.Button;
+import javax.swing.JTextArea;
 
 public class GuardianGUI {
 
 	private JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
 
 	/**
 	 * Launch the application.
@@ -99,31 +97,27 @@ public class GuardianGUI {
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
 		
-		textField = new JTextField();
-		textField.setFont(new Font("±¼¸²", Font.PLAIN, 18));
-		textField.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_4.add(textField, "name_10478129927613");
-		textField.setColumns(10);
+		JTextArea textArea_1 = new JTextArea();
+		textArea_1.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		panel_4.add(textArea_1, "name_9502280390988");
 		
 		JPanel panel_5 = new JPanel();
 		panel_5.setBounds(169, 221, 269, 28);
 		frame.getContentPane().add(panel_5);
 		panel_5.setLayout(new CardLayout(0, 0));
 		
-		textField_1 = new JTextField();
-		textField_1.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_5.add(textField_1, "name_10524848071242");
-		textField_1.setColumns(10);
+		JTextArea textArea_2 = new JTextArea();
+		textArea_2.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		panel_5.add(textArea_2, "name_9505344412199");
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBounds(169, 265, 269, 50);
 		frame.getContentPane().add(panel_6);
 		panel_6.setLayout(new CardLayout(0, 0));
 		
-		textField_2 = new JTextField();
-		textField_2.setHorizontalAlignment(SwingConstants.LEFT);
-		panel_6.add(textField_2, "name_10564294454991");
-		textField_2.setColumns(10);
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		panel_6.add(textArea, "name_9493520574929");
 		
 		JPanel panel_7 = new JPanel();
 		panel_7.setBounds(326, 371, 112, 28);
