@@ -178,12 +178,11 @@ public class RegistrationGUI {
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) { // 버튼 클릭 시
-				RegistrationDAO regiOn = new RegistrationDAO(); // DB에 Insert(추가)하기 위한 객체 regiOn 생성
+				RegistrationDAO regiOn = new RegistrationDAO(); // DB랑 연동하기 위한 객체 regiOn 생성
 				regID=textField.getText(); //ID 텍스트필드에 입력된 값을 regID변수에 넣음
 				regPW=textField_1.getText(); //PW 텍스트필드에 입력된 값을 regPW변수에 넣음
-				if(false){ // ID중복 시 실행되지 않도록 구현하기. select랑 ArrayList 참조.
+				if(regiOn.selectIdDuplication(regID)){
 					IdErrorLabel.setText("아이디가 중복되었습니다.");
-					
 				} else{
 				if(managerButton.isSelected() == true){
 					regInfo = 1;

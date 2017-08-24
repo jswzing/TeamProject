@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +16,7 @@ public class RegistrationDAO {
 	private String id = "net3";
 	private String pw = "1234";
 	private ResultSet rs;
+	private boolean dupCheck = true;
 
 	public void insertMember(String regID, String regPW, int regInfo) {
 
@@ -32,8 +34,8 @@ public class RegistrationDAO {
 				pstmt.executeUpdate();
 			} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
 				e.printStackTrace(); // 예외에 대한 자세한 사항을 consol창에 출력
-			} catch (SQLException e) {//아이디중복처리
-				e.printStackTrace();
+			} catch (SQLException e) {// 아이디중복처리
+				System.out.println("아이디중복");
 			} finally { // finally 블록은 try에서 예외가 발생하든 안하든 무조건 실행됨.
 			}
 			try {
@@ -47,4 +49,45 @@ public class RegistrationDAO {
 		}
 
 	}
+
+	public boolean selectIdDuplication(String regID) {
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(url, id, pw);
+
+			String sql2 = "select * from login where id = ?"; // Id 검색
+
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.setString(1, regID);
+
+			rs = pstmt.executeQuery(); // DB에서 셀렉트한 셀값 리턴
+			
+			if (rs.next()) {
+				if (rs.getString(1).equals(regID)) {
+					return true;
+				}
+			} else {
+				return false;
+			}
+
+		} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
+			e.printStackTrace(); // 예외에 대한 자세한 사항을 consol창에 출력
+		} catch (SQLException e) {
+			System.out.println("오류");
+			e.printStackTrace();
+		} finally { // finally 블록은 try에서 예외가 발생하든 안하든 무조건 실행됨.
+			try {
+				if (pstmt != null)
+					pstmt.close(); // 닫는부분도 앞의 상황에 따라 수정.
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}
+
 }
