@@ -1,26 +1,29 @@
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.SpringLayout;
-import javax.swing.JPanel;
 import java.awt.CardLayout;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
+import java.awt.EventQueue;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JRadioButton;
-import javax.swing.ButtonGroup;
-import javax.swing.GroupLayout;
-import javax.swing.GroupLayout.Alignment;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Scanner;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
+import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class RegistrationGUI {
 
 	private JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
+	String regID = ""; // 회원가입할 변수 regID 선언
+	String regPW = ""; // 회원가입할 변수 regPW 선언
+	protected int regInfo;
 
 	/**
 	 * Launch the application.
@@ -50,6 +53,8 @@ public class RegistrationGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
+		
 		frame.setBounds(100, 100, 337, 414);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
@@ -134,22 +139,65 @@ public class RegistrationGUI {
 		panel_5.add(memberButton);
 		
 		ButtonGroup group = new ButtonGroup();
-		group.add(memberButton);
 		group.add(managerButton);
+		group.add(memberButton);
 		
-		JButton btnNewButton = new JButton("\uD655\uC778");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JPanel panel_7 = new JPanel();
+		sl_panel_5.putConstraint(SpringLayout.NORTH, panel_7, 6, SpringLayout.SOUTH, managerButton);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel_7, 0, SpringLayout.WEST, managerButton);
+		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel_7, 0, SpringLayout.SOUTH, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, panel_7, -41, SpringLayout.EAST, panel_5);
+		panel_5.add(panel_7);
+		panel_7.setLayout(new CardLayout(0, 0));
+		
+		JLabel AuthorityErrorLabel = new JLabel("");
+		AuthorityErrorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		AuthorityErrorLabel.setForeground(Color.RED);
+		panel_7.add(AuthorityErrorLabel, "name_12209619340313");
+		
+		JPanel panel_6 = new JPanel();
+		springLayout.putConstraint(SpringLayout.NORTH, panel_6, 6, SpringLayout.SOUTH, panel_3);
+		springLayout.putConstraint(SpringLayout.WEST, panel_6, 0, SpringLayout.WEST, panel_3);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_6, 22, SpringLayout.SOUTH, panel_3);
+		springLayout.putConstraint(SpringLayout.EAST, panel_6, 0, SpringLayout.EAST, panel_3);
+		frame.getContentPane().add(panel_6);
+		panel_6.setLayout(new CardLayout(0, 0));
+		
+		JLabel IdErrorLabel = new JLabel("");
+		IdErrorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		IdErrorLabel.setForeground(Color.RED);
+		
+		panel_6.add(IdErrorLabel, "name_9572980119480");
 				
-				frame.dispose();
-			}
-		});
+						
+		JButton btnNewButton = new JButton("\uD655\uC778");
 		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 17, SpringLayout.SOUTH, panel_5);
 		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, -221, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, 57, SpringLayout.SOUTH, panel_5);
 		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -99, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(btnNewButton);
-		
-	
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) { // 버튼 클릭 시
+				RegistrationDAO regiOn = new RegistrationDAO(); // DB에 Insert(추가)하기 위한 객체 regiOn 생성
+				regID=textField.getText(); //ID 텍스트필드에 입력된 값을 regID변수에 넣음
+				regPW=textField_1.getText(); //PW 텍스트필드에 입력된 값을 regPW변수에 넣음
+				if(false){ // ID중복 시 실행되지 않도록 구현하기. select랑 ArrayList 참조.
+					IdErrorLabel.setText("아이디가 중복되었습니다.");
+					
+				} else{
+				if(managerButton.isSelected() == true){
+					regInfo = 1;
+					regiOn.insertMember(regID, regPW, regInfo); // DB에 insert기능 하는 메소드 실행
+					frame.dispose(); // 창 닫힘
+					} else if(memberButton.isSelected() == true){
+						regInfo = 2;
+						regiOn.insertMember(regID, regPW, regInfo); // DB에 insert기능 하는 메소드 실행
+						frame.dispose(); // 창 닫힘
+						} else{
+							AuthorityErrorLabel.setText("권한을 선택해주세요.");
+						}
+				}
+				}
+			});
 	}
 }

@@ -16,33 +16,35 @@ public class RegistrationDAO {
 	private String pw = "1234";
 	private ResultSet rs;
 
-	public void insertMember() {
+	public void insertMember(String regID, String regPW, int regInfo) {
 
-		int num = 0;
+		if (regInfo == 0) {
+		} else {
+			try { // 예외처리 할 부분
 
-		try { // 예외처리 할 부분
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, id, pw);
-			String sql = "insert into Login(id,pw,m)";
-			pstmt = conn.prepareStatement(sql);
-			num = pstmt.executeUpdate(); // DB에서 변경된 로우 수 리턴. int형
-
-		} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
-			e.printStackTrace(); // 예외에 대한 자세한 사항을 consol창에 출력
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally { // finally 블록은 try에서 예외가 발생하든 안하든 무조건 실행됨.
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				conn = DriverManager.getConnection(url, id, pw);
+				String sql = "insert into login(id,pw,m)" + "values(?,?,?)";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, regID);
+				pstmt.setString(2, regPW);
+				pstmt.setInt(3, regInfo);
+				pstmt.executeUpdate();
+			} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
+				e.printStackTrace(); // 예외에 대한 자세한 사항을 consol창에 출력
+			} catch (SQLException e) {//아이디중복처리
+				e.printStackTrace();
+			} finally { // finally 블록은 try에서 예외가 발생하든 안하든 무조건 실행됨.
+			}
 			try {
 				if (pstmt != null)
 					pstmt.close(); // 닫는부분도 앞의 상황에 따라 수정.
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-
 				e.printStackTrace();
 			}
 		}
 
 	}
-
 }
