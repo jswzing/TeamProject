@@ -5,8 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class RegistrationDAO {
-
+public class InfoDAO {//애견정보&보호자 입력 테이블
 	private static Connection conn; // connection 인터페이스
 	private static Statement stmt; // statement 인터페이스
 	private static PreparedStatement pstmt;
@@ -16,15 +15,15 @@ public class RegistrationDAO {
 	private String pw = "hjl";
 	private ResultSet rs;
 
-	public void insertMember() {
+	public void createTable() {
 
 		int num = 0;
 
 		try { // 예외처리 할 부분
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			conn = DriverManager.getConnection(url, id, pw);
-			String sql = "insert into Login(id,pw,m)";
-			pstmt = conn.prepareStatement(sql);
+			String sql1 = "create table Info(regiNum number primary key not null, name varchar2(20) not null, gender number not null,species varchar2(20) not null, detailedSpecies varchar2(20), age number, weight number, comments varchar2(50),guardianName varchar2(20), guardianMobile varchar2(20), guardianAddress varchar2(50))";
+			pstmt = conn.prepareStatement(sql1);
 			num = pstmt.executeUpdate(); // DB에서 변경된 로우 수 리턴. int형
 
 		} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분

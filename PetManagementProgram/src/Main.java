@@ -9,6 +9,8 @@ public class Main {
 		LoginGUI loginGUI = new LoginGUI();
 		loginGUI.main(null);
 		
+		InfoDAO info = new InfoDAO();
+		//info.createTable();
 		
 	}
 }

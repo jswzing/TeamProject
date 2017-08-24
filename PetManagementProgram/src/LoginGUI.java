@@ -7,6 +7,7 @@ import java.awt.CardLayout;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Menu;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
@@ -22,8 +23,8 @@ public class LoginGUI {
 	private JPanel panel_2;
 	private JPanel panel_3;
 	private JPanel panel_4;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	private JTextField id;
+	private JTextField pw;
 	private JPanel panel_5;
 	private JPanel panel_6;
 
@@ -116,15 +117,15 @@ public class LoginGUI {
 		springLayout.putConstraint(SpringLayout.EAST, panel_4, 0, SpringLayout.EAST, panel_3);
 		panel_3.setLayout(new CardLayout(0, 0));
 		
-		textField_1 = new JTextField();
-		panel_3.add(textField_1, "name_6488162938215");
-		textField_1.setColumns(10);
+		id = new JTextField();
+		panel_3.add(id, "name_6488162938215");
+		id.setColumns(10);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
 		
-		textField_2 = new JTextField();
-		panel_4.add(textField_2, "name_6490402807929");
-		textField_2.setColumns(10);
+		pw = new JTextField();
+		panel_4.add(pw, "name_6490402807929");
+		pw.setColumns(10);
 		
 		panel_5 = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel_5, -88, SpringLayout.SOUTH, frame.getContentPane());
@@ -141,6 +142,23 @@ public class LoginGUI {
 		panel_5.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton = new JButton("\uD655\uC778");		
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				LoginDAO login1 = new LoginDAO(); //loginDAO 객체 생성
+				LoginVO vo=login1.selectLogin(id.getText(), pw.getText());//loginDAO에 관리자 인지아닌지 구분하는 메소드 selectLogin구현
+				//LoginVO객체를 생성해서 m값을 받음
+				if(vo.getM()==1){
+					MenuGUI manager = new MenuGUI();
+					manager.main(null);
+				}
+				else{
+					MenuGUI general = new MenuGUI();
+					general.main(null);
+				}
+				
+			}
+		});
 		panel_5.add(btnNewButton, "name_6545830540329");
 		frame.getContentPane().add(panel_6);
 		panel_6.setLayout(new CardLayout(0, 0));
