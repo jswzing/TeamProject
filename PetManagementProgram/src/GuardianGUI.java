@@ -51,7 +51,7 @@ public class GuardianGUI {
 		frame.getContentPane().setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(55, 31, 383, 73);
+		panel.setBounds(147, 31, 383, 73);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
@@ -63,11 +63,11 @@ public class GuardianGUI {
 		panel.add(lblNewLabel, "name_10134951827494");
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(55, 175, 94, 28);
+		panel_1.setBounds(147, 171, 94, 28);
 		frame.getContentPane().add(panel_1);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(55, 221, 94, 22);
+		panel_2.setBounds(147, 217, 94, 22);
 		panel_1.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC774\uB984");
@@ -77,7 +77,7 @@ public class GuardianGUI {
 		frame.getContentPane().add(panel_2);
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(55, 265, 94, 22);
+		panel_3.setBounds(147, 261, 94, 22);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_2 = new JLabel("\uC5F0\uB77D\uCC98");
@@ -93,7 +93,7 @@ public class GuardianGUI {
 		panel_3.add(lblNewLabel_3, "name_10445331306559");
 		
 		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(169, 175, 269, 28);
+		panel_4.setBounds(261, 171, 269, 28);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
 		
@@ -102,7 +102,7 @@ public class GuardianGUI {
 		panel_4.add(textArea_1, "name_9502280390988");
 		
 		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(169, 221, 269, 28);
+		panel_5.setBounds(261, 217, 269, 28);
 		frame.getContentPane().add(panel_5);
 		panel_5.setLayout(new CardLayout(0, 0));
 		
@@ -111,7 +111,7 @@ public class GuardianGUI {
 		panel_5.add(textArea_2, "name_9505344412199");
 		
 		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(169, 265, 269, 50);
+		panel_6.setBounds(261, 261, 269, 50);
 		frame.getContentPane().add(panel_6);
 		panel_6.setLayout(new CardLayout(0, 0));
 		
@@ -120,7 +120,7 @@ public class GuardianGUI {
 		panel_6.add(textArea, "name_9493520574929");
 		
 		JPanel panel_7 = new JPanel();
-		panel_7.setBounds(326, 371, 112, 28);
+		panel_7.setBounds(418, 367, 112, 28);
 		frame.getContentPane().add(panel_7);
 		panel_7.setLayout(new CardLayout(0, 0));
 		
