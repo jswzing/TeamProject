@@ -27,7 +27,8 @@ public class LoginDAO {
 			try { // 예외처리 할 부분
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				conn = DriverManager.getConnection(url, dbId, dbPw);
-				String sql1 = "create table Login(ID varchar2(20) not null, PW varchar2(20) not null,m number)";
+				String sql1 = "create table Login(ID varchar2(20) primary key, PW varchar2(20) not null,m number)";
+
 				pstmt = conn.prepareStatement(sql1);	
 				num = pstmt.executeUpdate();  // DB에서 변경된 로우 수 리턴. int형
 
