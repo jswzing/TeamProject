@@ -16,7 +16,6 @@ public class RegistrationDAO {
 	private String id = "net3";
 	private String pw = "1234";
 	private ResultSet rs;
-	private boolean dupCheck = true;
 
 	public void insertMember(String regID, String regPW, int regInfo) {
 
