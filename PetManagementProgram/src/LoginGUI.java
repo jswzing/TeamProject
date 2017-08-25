@@ -147,6 +147,24 @@ public class LoginGUI {
 		panel.add(newMember);
 		
 		JButton login = new JButton("\uB85C\uADF8\uC778");
+		login.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				LoginDAO login1 = new LoginDAO(); //loginDAO 객체 생성
+				LoginVO vo=login1.selectLogin(idInput.getText(), pwInput.getText());//loginDAO에 관리자 인지아닌지 구분하는 메소드 selectLogin구현
+				//LoginVO객체를 생성해서 m값을 받음
+				if(vo.getM()==1){
+					MenuGUI manager = new MenuGUI();
+					manager.main(null);
+					frame.dispose();
+				}
+				else{
+					MenuGUI general = new MenuGUI();
+					general.main(null);
+					frame.dispose();
+				}
+			}
+		});
 		springLayout.putConstraint(SpringLayout.NORTH, panel, -278, SpringLayout.SOUTH, login);
 		login.setBounds(140, 350, 110, 30);
 		panel.add(login);
