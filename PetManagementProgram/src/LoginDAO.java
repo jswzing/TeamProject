@@ -16,8 +16,8 @@ public class LoginDAO {
 		private static PreparedStatement pstmt;
 
 		private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-		private String dbId = "hjl";
-		private String dbPw = "hjl";
+		private String dbId = "net3";
+		private String dbPw = "1234";
 		private ResultSet rs;
 		
 		public void createTable(){

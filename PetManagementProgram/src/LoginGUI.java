@@ -18,7 +18,6 @@ import java.awt.event.ActionEvent;
 public class LoginGUI {
 
 	private JFrame frame;
-	private JTextField textField;
 	private JPanel panel_1;
 	private JPanel panel_2;
 	private JPanel panel_3;
@@ -58,7 +57,7 @@ public class LoginGUI {
 		frame = new JFrame();
 		frame.setResizable(false);
 		frame.setBounds(100, 100, 567, 395);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
@@ -69,14 +68,6 @@ public class LoginGUI {
 		springLayout.putConstraint(SpringLayout.EAST, panel, 541, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
-		
-		textField = new JTextField();
-		textField.setBackground(new Color(240, 255, 255));
-		textField.setFont(new Font("±¼¸²", Font.PLAIN, 50));
-		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setText("\uC560\uC644\uB3D9\uBB3C\uAD00\uB9AC\uD504\uB85C\uADF8\uB7A8");
-		panel.add(textField, "name_6251669400772");
-		textField.setColumns(10);
 		
 		panel_1 = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 58, SpringLayout.SOUTH, panel);
@@ -95,7 +86,7 @@ public class LoginGUI {
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblPw = new JLabel("PW");
-		lblPw.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblPw.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		lblPw.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_2.add(lblPw, "name_6689315434097");
 		
@@ -103,10 +94,15 @@ public class LoginGUI {
 		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 58, SpringLayout.SOUTH, panel);
 		springLayout.putConstraint(SpringLayout.WEST, panel_3, 68, SpringLayout.EAST, panel_1);
 		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, 94, SpringLayout.SOUTH, panel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\uC560\uC644\uB3D9\uBB3C \uAD00\uB9AC \uD504\uB85C\uADF8\uB7A8");
+		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 40));
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lblNewLabel_1, "name_756552619486");
 		springLayout.putConstraint(SpringLayout.EAST, panel_3, 297, SpringLayout.EAST, panel_1);
 		
 		JLabel lblNewLabel = new JLabel("ID");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel, "name_6672982059108");
 		frame.getContentPane().add(panel_3);
@@ -119,12 +115,14 @@ public class LoginGUI {
 		panel_3.setLayout(new CardLayout(0, 0));
 		
 		id = new JTextField();
+		id.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		panel_3.add(id, "name_6488162938215");
 		id.setColumns(10);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
 		
 		pw = new JTextField();
+		pw.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		panel_4.add(pw, "name_6490402807929");
 		pw.setColumns(10);
 		
@@ -143,6 +141,7 @@ public class LoginGUI {
 		panel_5.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton = new JButton("\uD655\uC778");		
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -152,10 +151,12 @@ public class LoginGUI {
 				if(vo.getM()==1){
 					MenuGUI manager = new MenuGUI();
 					manager.main(null);
+					frame.dispose();
 				}
 				else{
 					MenuGUI general = new MenuGUI();
 					general.main(null);
+					frame.dispose();
 				}
 				
 			}
@@ -165,6 +166,7 @@ public class LoginGUI {
 		panel_6.setLayout(new CardLayout(0, 0));
 		
 		JButton btnNewButton_1 = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		btnNewButton_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				RegistrationGUI reGUI = new RegistrationGUI();

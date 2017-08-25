@@ -56,7 +56,7 @@ public class RegistrationGUI {
 		frame.setResizable(false);
 		
 		frame.setBounds(100, 100, 337, 414);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
@@ -69,7 +69,7 @@ public class RegistrationGUI {
 		panel.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("\uD68C\uC6D0\uAC00\uC785");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 35));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 35));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel, "name_7534282729791");
 		
@@ -87,12 +87,16 @@ public class RegistrationGUI {
 		panel_1.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblId = new JLabel("ID");
+		lblId.setHorizontalAlignment(SwingConstants.CENTER);
+		lblId.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
 		panel_1.add(lblId, "name_7596613482305");
 		springLayout.putConstraint(SpringLayout.EAST, panel_2, 105, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("PW");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
 		panel_2.add(lblNewLabel_1, "name_7612460036501");
 		
 		JPanel panel_3 = new JPanel();
@@ -129,11 +133,13 @@ public class RegistrationGUI {
 		panel_5.setLayout(sl_panel_5);
 		
 		JRadioButton managerButton = new JRadioButton("\uAD00\uB9AC\uC790");
+		managerButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		sl_panel_5.putConstraint(SpringLayout.NORTH, managerButton, 27, SpringLayout.NORTH, panel_5);
 		sl_panel_5.putConstraint(SpringLayout.WEST, managerButton, 53, SpringLayout.WEST, panel_5);
 		panel_5.add(managerButton);
 		
 		JRadioButton memberButton = new JRadioButton("\uC77C\uBC18\uD68C\uC6D0");
+		memberButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		sl_panel_5.putConstraint(SpringLayout.NORTH, memberButton, 0, SpringLayout.NORTH, managerButton);
 		sl_panel_5.putConstraint(SpringLayout.WEST, memberButton, 36, SpringLayout.EAST, managerButton);
 		panel_5.add(memberButton);
@@ -171,6 +177,7 @@ public class RegistrationGUI {
 				
 						
 		JButton btnNewButton = new JButton("\uD655\uC778");
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 17, SpringLayout.SOUTH, panel_5);
 		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, -221, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, 57, SpringLayout.SOUTH, panel_5);

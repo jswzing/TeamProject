@@ -57,8 +57,9 @@ public class MenuGUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setResizable(false);
 		frame.setBounds(100, 100, 593, 453);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
@@ -73,7 +74,7 @@ public class MenuGUI {
 		textField = new JTextField();
 		textField.setBackground(new Color(0, 250, 154));
 		textField.setHorizontalAlignment(SwingConstants.CENTER);
-		textField.setFont(new Font("±¼¸²", Font.PLAIN, 28));
+		textField.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 28));
 		textField.setText("\uD504\uB85C\uADF8\uB7A8 \uAD00\uB9AC \uBA54\uB274");
 		panel.add(textField, "name_5564498849522");
 		textField.setColumns(10);
@@ -82,23 +83,24 @@ public class MenuGUI {
 		panel.add(label, "name_5469715892520");
 		
 		btnNewButton = new JButton("\uCD94 \uAC00");
+		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -200, SpringLayout.EAST, frame.getContentPane());
 		btnNewButton.addActionListener(new ActionListener() { // Ãß°¡¹öÆ° Å¬¸¯
 			public void actionPerformed(ActionEvent e) {
 				InfoGUI infoG = new InfoGUI();
 				infoG.main(null);   // Ãß°¡ ¹öÆ° Æ²¸¯ ½Ã InfoGUIÃ¢ È°¼ºÈ­
 			}
 		});
-		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 218, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, -254, SpringLayout.SOUTH, frame.getContentPane());
-		btnNewButton.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		frame.getContentPane().add(btnNewButton);
 		
 		lblNewLabel = new JLabel("1.");
-		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel, 41, SpringLayout.SOUTH, panel);
+		springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, -379, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 10, SpringLayout.EAST, lblNewLabel);
 		springLayout.putConstraint(SpringLayout.WEST, lblNewLabel, 160, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, lblNewLabel, -10, SpringLayout.WEST, btnNewButton);
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, 0, SpringLayout.SOUTH, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.NORTH, lblNewLabel, 41, SpringLayout.SOUTH, panel);
 		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 2, SpringLayout.NORTH, lblNewLabel);
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 30));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		frame.getContentPane().add(lblNewLabel);
 		
@@ -109,73 +111,72 @@ public class MenuGUI {
 		springLayout.putConstraint(SpringLayout.SOUTH, label_1, -197, SpringLayout.SOUTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, label_1, 0, SpringLayout.EAST, lblNewLabel);
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		label_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 30));
 		frame.getContentPane().add(label_1);
 		
 		label_2 = new JLabel("3.");
 		springLayout.putConstraint(SpringLayout.NORTH, label_2, 6, SpringLayout.SOUTH, label_1);
-		springLayout.putConstraint(SpringLayout.WEST, label_2, 0, SpringLayout.WEST, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.WEST, label_2, 160, SpringLayout.WEST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, label_2, -141, SpringLayout.SOUTH, frame.getContentPane());
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		label_2.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		label_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 30));
 		frame.getContentPane().add(label_2);
 		
 		label_3 = new JLabel("4.");
 		springLayout.putConstraint(SpringLayout.NORTH, label_3, 6, SpringLayout.SOUTH, label_2);
-		springLayout.putConstraint(SpringLayout.WEST, label_3, 0, SpringLayout.WEST, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.WEST, label_3, 160, SpringLayout.WEST, frame.getContentPane());
 		label_3.setHorizontalAlignment(SwingConstants.CENTER);
-		label_3.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		label_3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 30));
 		frame.getContentPane().add(label_3);
 		
 		label_4 = new JLabel("5.");
-		springLayout.putConstraint(SpringLayout.WEST, label_4, 0, SpringLayout.WEST, lblNewLabel);
+		springLayout.putConstraint(SpringLayout.NORTH, label_4, 350, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, label_4, 160, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, label_4, -28, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, label_3, -13, SpringLayout.NORTH, label_4);
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setFont(new Font("±¼¸²", Font.PLAIN, 30));
+		label_4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 30));
 		frame.getContentPane().add(label_4);
 		
 		button = new JButton("\uC218 \uC815");
-		springLayout.putConstraint(SpringLayout.NORTH, button, 4, SpringLayout.SOUTH, btnNewButton);
-		springLayout.putConstraint(SpringLayout.SOUTH, button, -203, SpringLayout.SOUTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, 0, SpringLayout.EAST, button);
-		springLayout.putConstraint(SpringLayout.WEST, button, 218, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, button, -209, SpringLayout.EAST, frame.getContentPane());
-		button.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		springLayout.putConstraint(SpringLayout.NORTH, button, 6, SpringLayout.SOUTH, btnNewButton);
+		springLayout.putConstraint(SpringLayout.WEST, button, 0, SpringLayout.WEST, btnNewButton);
+		springLayout.putConstraint(SpringLayout.EAST, button, 0, SpringLayout.EAST, btnNewButton);
+		button.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		frame.getContentPane().add(button);
 		
 		button_1 = new JButton("\uC0AD \uC81C");
-		springLayout.putConstraint(SpringLayout.NORTH, button_1, 224, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, button_1, -144, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, button, -9, SpringLayout.NORTH, button_1);
 		springLayout.putConstraint(SpringLayout.EAST, label_2, -10, SpringLayout.WEST, button_1);
+		springLayout.putConstraint(SpringLayout.EAST, button_1, 0, SpringLayout.EAST, btnNewButton);
+		springLayout.putConstraint(SpringLayout.SOUTH, button_1, -154, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, button_1, 224, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, button_1, 218, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, button_1, -209, SpringLayout.EAST, frame.getContentPane());
-		button_1.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		button_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		frame.getContentPane().add(button_1);
 		
 		button_2 = new JButton("\uC870 \uD68C");
+		springLayout.putConstraint(SpringLayout.EAST, label_3, -10, SpringLayout.WEST, button_2);
+		springLayout.putConstraint(SpringLayout.NORTH, button_2, 2, SpringLayout.NORTH, label_3);
+		springLayout.putConstraint(SpringLayout.WEST, button_2, 0, SpringLayout.WEST, btnNewButton);
+		springLayout.putConstraint(SpringLayout.EAST, button_2, 0, SpringLayout.EAST, btnNewButton);
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // Á¶È¸¹öÆ°
 				SearchGUI_1 searG = new SearchGUI_1();
 				searG.main(null);  // °Ë»öÃ¢ È°¼ºÈ­
 			}
 		});
-		springLayout.putConstraint(SpringLayout.SOUTH, label_3, 0, SpringLayout.SOUTH, button_2);
-		springLayout.putConstraint(SpringLayout.EAST, label_3, -10, SpringLayout.WEST, button_2);
-		springLayout.putConstraint(SpringLayout.WEST, button_2, 218, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, button_2, -209, SpringLayout.EAST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.NORTH, button_2, 68, SpringLayout.SOUTH, button);
-		springLayout.putConstraint(SpringLayout.SOUTH, button_2, -88, SpringLayout.SOUTH, frame.getContentPane());
-		button_2.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		button_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		frame.getContentPane().add(button_2);
 		
 		button_3 = new JButton("\uB85C\uADF8\uC544\uC6C3");
-		springLayout.putConstraint(SpringLayout.NORTH, label_4, 0, SpringLayout.NORTH, button_3);
-		springLayout.putConstraint(SpringLayout.SOUTH, label_4, 0, SpringLayout.SOUTH, button_3);
+		springLayout.putConstraint(SpringLayout.SOUTH, button_2, -11, SpringLayout.NORTH, button_3);
 		springLayout.putConstraint(SpringLayout.EAST, label_4, -10, SpringLayout.WEST, button_3);
+		springLayout.putConstraint(SpringLayout.EAST, button_3, 0, SpringLayout.EAST, btnNewButton);
+		springLayout.putConstraint(SpringLayout.NORTH, button_3, 350, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, button_3, 218, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, button_3, -209, SpringLayout.EAST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.NORTH, button_3, 13, SpringLayout.SOUTH, button_2);
 		springLayout.putConstraint(SpringLayout.SOUTH, button_3, -28, SpringLayout.SOUTH, frame.getContentPane());
-		button_3.setFont(new Font("±¼¸²", Font.PLAIN, 24));
+		button_3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		frame.getContentPane().add(button_3);
 	}
 }
