@@ -15,6 +15,7 @@ import java.awt.Button;
 import javax.swing.JTextArea;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
+import javax.swing.JButton;
 
 public class GuardianGUI {
 
@@ -59,16 +60,6 @@ public class GuardianGUI {
 		frame.getContentPane().add(background);
 		background.setLayout(null);
 		
-		JPanel panel_7_button = new JPanel();
-		panel_7_button.setBounds(410, 442, 120, 23);
-		background.add(panel_7_button);
-		panel_7_button.setLayout(new CardLayout(0, 0));
-		
-		Button compButton = new Button("\uC644\uB8CC");
-		compButton.setBounds(249, 503, 120, 23);
-		panel_7_button.add(compButton, "name_5037528703030");
-		compButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
-		
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.setBounds(140, 49, 390, 70);
@@ -89,7 +80,7 @@ public class GuardianGUI {
 		
 		JLabel Name = new JLabel("\uC774\uB984");
 		panel_1_Name.add(Name, "name_5382253871486");
-		Name.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		Name.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		Name.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_2_contact = new JPanel();
@@ -99,7 +90,7 @@ public class GuardianGUI {
 		
 		JLabel contactNo = new JLabel("\uC5F0\uB77D\uCC98");
 		panel_2_contact.add(contactNo, "name_5004449119981");
-		contactNo.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		contactNo.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		contactNo.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_3_address = new JPanel();
@@ -109,7 +100,7 @@ public class GuardianGUI {
 		
 		JLabel address = new JLabel("\uC8FC\uC18C");
 		panel_3_address.add(address, "name_5008952993544");
-		address.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
+		address.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		address.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_4_nameInput = new JPanel();
@@ -141,5 +132,10 @@ public class GuardianGUI {
 		JTextArea addressInput = new JTextArea();
 		panel_6_addInput.add(addressInput, "name_5030856650982");
 		addressInput.setFont(new Font("Monospaced", Font.PLAIN, 15));
+		
+		JButton btnNewButton = new JButton("\uC644\uB8CC");
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
+		btnNewButton.setBounds(433, 442, 100, 30);
+		background.add(btnNewButton);
 	}
 }
