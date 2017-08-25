@@ -55,67 +55,65 @@ public class RegistrationGUI {
 		frame = new JFrame();
 		frame.setResizable(false);
 		
-		frame.setBounds(100, 100, 337, 414);
+		frame.setBounds(100, 100, 700, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		SpringLayout springLayout = new SpringLayout();
 		frame.getContentPane().setLayout(springLayout);
 		
 		JPanel panel = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel, 10, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, panel, 10, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 208, SpringLayout.WEST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, panel, 78, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, panel, 311, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, -185, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("\uD68C\uC6D0\uAC00\uC785");
-		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 35));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lblNewLabel, "name_7534282729791");
 		
 		JPanel panel_1 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 13, SpringLayout.SOUTH, panel);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 91, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, panel_1, 10, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, 53, SpringLayout.SOUTH, panel);
-		springLayout.putConstraint(SpringLayout.EAST, panel_1, 105, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -441, SpringLayout.SOUTH, frame.getContentPane());
 		frame.getContentPane().add(panel_1);
 		
 		JPanel panel_2 = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel_2, 30, SpringLayout.SOUTH, panel_1);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_2, -371, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel_1, 0, SpringLayout.EAST, panel_2);
 		springLayout.putConstraint(SpringLayout.WEST, panel_2, 10, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_2, 70, SpringLayout.SOUTH, panel_1);
+		springLayout.putConstraint(SpringLayout.EAST, panel_2, 138, SpringLayout.WEST, frame.getContentPane());
 		panel_1.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblId = new JLabel("ID");
 		lblId.setHorizontalAlignment(SwingConstants.CENTER);
-		lblId.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
+		lblId.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
 		panel_1.add(lblId, "name_7596613482305");
-		springLayout.putConstraint(SpringLayout.EAST, panel_2, 105, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("PW");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
+		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
 		panel_2.add(lblNewLabel_1, "name_7612460036501");
 		
 		JPanel panel_3 = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 13, SpringLayout.SOUTH, panel);
-		springLayout.putConstraint(SpringLayout.WEST, panel_3, -192, SpringLayout.EAST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, 53, SpringLayout.SOUTH, panel);
-		springLayout.putConstraint(SpringLayout.EAST, panel_3, -10, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel_3, -510, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel_3, -127, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(panel_3);
 		
 		JPanel panel_4 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_4, 0, SpringLayout.NORTH, panel_2);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_4, 161, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.WEST, panel_4, 0, SpringLayout.WEST, panel_3);
+		springLayout.putConstraint(SpringLayout.EAST, panel_4, 0, SpringLayout.EAST, panel_3);
 		panel_3.setLayout(new CardLayout(0, 0));
 		
 		textField = new JTextField();
 		panel_3.add(textField, "name_7676223184560");
 		textField.setColumns(10);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_4, 0, SpringLayout.SOUTH, panel_2);
-		springLayout.putConstraint(SpringLayout.EAST, panel_4, 0, SpringLayout.EAST, panel);
 		frame.getContentPane().add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
 		
@@ -124,24 +122,27 @@ public class RegistrationGUI {
 		textField_1.setColumns(10);
 		
 		JPanel panel_5 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_5, 23, SpringLayout.SOUTH, panel_2);
-		springLayout.putConstraint(SpringLayout.WEST, panel_5, 28, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_5, 100, SpringLayout.SOUTH, panel_2);
-		springLayout.putConstraint(SpringLayout.EAST, panel_5, 292, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_4, -81, SpringLayout.NORTH, panel_5);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_5, 282, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel_5, 0, SpringLayout.WEST, panel_3);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_5, -198, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel_5, -148, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(panel_5);
 		SpringLayout sl_panel_5 = new SpringLayout();
 		panel_5.setLayout(sl_panel_5);
 		
 		JRadioButton managerButton = new JRadioButton("\uAD00\uB9AC\uC790");
-		managerButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		sl_panel_5.putConstraint(SpringLayout.NORTH, managerButton, 27, SpringLayout.NORTH, panel_5);
-		sl_panel_5.putConstraint(SpringLayout.WEST, managerButton, 53, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.WEST, managerButton, 67, SpringLayout.WEST, panel_5);
+		sl_panel_5.putConstraint(SpringLayout.EAST, managerButton, -199, SpringLayout.EAST, panel_5);
+		managerButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 16));
 		panel_5.add(managerButton);
 		
 		JRadioButton memberButton = new JRadioButton("\uC77C\uBC18\uD68C\uC6D0");
-		memberButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
 		sl_panel_5.putConstraint(SpringLayout.NORTH, memberButton, 0, SpringLayout.NORTH, managerButton);
-		sl_panel_5.putConstraint(SpringLayout.WEST, memberButton, 36, SpringLayout.EAST, managerButton);
+		sl_panel_5.putConstraint(SpringLayout.WEST, memberButton, 45, SpringLayout.EAST, managerButton);
+		sl_panel_5.putConstraint(SpringLayout.EAST, memberButton, -58, SpringLayout.EAST, panel_5);
+		memberButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 16));
 		panel_5.add(memberButton);
 		
 		ButtonGroup group = new ButtonGroup();
@@ -150,7 +151,7 @@ public class RegistrationGUI {
 		
 		JPanel panel_7 = new JPanel();
 		sl_panel_5.putConstraint(SpringLayout.NORTH, panel_7, 6, SpringLayout.SOUTH, managerButton);
-		sl_panel_5.putConstraint(SpringLayout.WEST, panel_7, 0, SpringLayout.WEST, managerButton);
+		sl_panel_5.putConstraint(SpringLayout.WEST, panel_7, 53, SpringLayout.WEST, panel_5);
 		sl_panel_5.putConstraint(SpringLayout.SOUTH, panel_7, 0, SpringLayout.SOUTH, panel_5);
 		sl_panel_5.putConstraint(SpringLayout.EAST, panel_7, -41, SpringLayout.EAST, panel_5);
 		panel_5.add(panel_7);
@@ -162,10 +163,11 @@ public class RegistrationGUI {
 		panel_7.add(AuthorityErrorLabel, "name_12209619340313");
 		
 		JPanel panel_6 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_6, 6, SpringLayout.SOUTH, panel_3);
-		springLayout.putConstraint(SpringLayout.WEST, panel_6, 0, SpringLayout.WEST, panel_3);
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_6, 22, SpringLayout.SOUTH, panel_3);
-		springLayout.putConstraint(SpringLayout.EAST, panel_6, 0, SpringLayout.EAST, panel_3);
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, -8, SpringLayout.NORTH, panel_6);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_6, 139, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel_6, 276, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_6, -6, SpringLayout.NORTH, panel_4);
+		springLayout.putConstraint(SpringLayout.EAST, panel_6, -236, SpringLayout.EAST, frame.getContentPane());
 		frame.getContentPane().add(panel_6);
 		panel_6.setLayout(new CardLayout(0, 0));
 		
@@ -177,11 +179,11 @@ public class RegistrationGUI {
 				
 						
 		JButton btnNewButton = new JButton("\uD655\uC778");
-		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 12));
-		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 17, SpringLayout.SOUTH, panel_5);
-		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, -221, SpringLayout.EAST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, 57, SpringLayout.SOUTH, panel_5);
-		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -99, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, btnNewButton, 31, SpringLayout.SOUTH, panel_5);
+		springLayout.putConstraint(SpringLayout.WEST, btnNewButton, 221, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, btnNewButton, -75, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, btnNewButton, -200, SpringLayout.EAST, frame.getContentPane());
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 21));
 		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) { // ¹öÆ° Å¬¸¯ ½Ã

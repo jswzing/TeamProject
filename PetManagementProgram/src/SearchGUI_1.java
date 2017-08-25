@@ -53,7 +53,7 @@ public class SearchGUI_1 {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 706, 506);
+		frame.setBounds(100, 100, 700, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -62,8 +62,8 @@ public class SearchGUI_1 {
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 
-		JLabel label = new JLabel("\uC870 \uD68C");
-		label.setFont(new Font("±¼¸²", Font.BOLD, 50));
+		JLabel label = new JLabel("\uC870     \uD68C");
+		label.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(label, "name_11531351470090");
 
@@ -73,7 +73,7 @@ public class SearchGUI_1 {
 		panel_1.setLayout(new CardLayout(0, 0));
 
 		JLabel lblNewLabel = new JLabel("\uAC80 \uC0C9");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel, "name_11600508772367");
 
@@ -95,7 +95,7 @@ public class SearchGUI_1 {
 		});
 		button.setBounds(457, 77, 137, 32);
 		frame.getContentPane().add(button);
-		button.setFont(new Font("Dialog", Font.BOLD, 18));
+		button.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 125, 666, 32);
@@ -118,7 +118,7 @@ public class SearchGUI_1 {
 		
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(12, 162, 666, 296);
+		scrollPane.setBounds(12, 167, 666, 379);
 		frame.getContentPane().add(scrollPane);
 		
 		JTextArea textArea = new JTextArea();
