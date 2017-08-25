@@ -41,50 +41,49 @@ public class GuardianGUI {
 		initialize();
 	}
 
-	/**
+	/**S
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 741, 613);
+		frame.setBounds(100, 100, 700, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(147, 31, 383, 73);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new CardLayout(0, 0));
+		JPanel panel_8 = new JPanel();
+		panel_8.setBounds(0, 0, 707, 575);
+		frame.getContentPane().add(panel_8);
 		
 		JLabel lblNewLabel = new JLabel("\uBCF4\uD638\uC790 \uC815\uBCF4");
+		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setBackground(new Color(153, 180, 209));
 		lblNewLabel.setLabelFor(frame);
 		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel, "name_10134951827494");
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(147, 171, 94, 28);
 		frame.getContentPane().add(panel_1);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(147, 217, 94, 22);
 		panel_1.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_1 = new JLabel("\uC774\uB984");
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.BOLD, 18));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_1.add(lblNewLabel_1, "name_10410950743880");
-		frame.getContentPane().add(panel_2);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(147, 261, 94, 22);
+		JPanel panel_2 = new JPanel();
+		panel_2.setBounds(147, 217, 94, 22);
+		frame.getContentPane().add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_2 = new JLabel("\uC5F0\uB77D\uCC98");
 		lblNewLabel_2.setFont(new Font("±¼¸²", Font.BOLD, 18));
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(lblNewLabel_2, "name_10427619988567");
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(147, 261, 94, 22);
 		frame.getContentPane().add(panel_3);
 		panel_3.setLayout(new CardLayout(0, 0));
 		
@@ -135,5 +134,10 @@ public class GuardianGUI {
 		lblNewLabel_4.setFont(new Font("±¼¸²", Font.BOLD, 18));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_7.add(lblNewLabel_4, "name_10669186233266");
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(147, 31, 383, 73);
+		frame.getContentPane().add(panel);
+		panel.setLayout(new CardLayout(0, 0));
 	}
 }
