@@ -17,6 +17,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextArea;
+import javax.swing.border.BevelBorder;
 
 public class InfoGUI {
 
@@ -52,179 +53,200 @@ public class InfoGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 490, 480);
+		frame.setBounds(100, 100, 700, 600);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(34, 21, 412, 45);
-		frame.getContentPane().add(panel);
-		panel.setLayout(new CardLayout(0, 0));
+		ButtonGroup group = new ButtonGroup();
 		
-		JLabel lblNewLabel = new JLabel("\uC560\uC644\uB3D9\uBB3C \uC815\uBCF4");
-		lblNewLabel.setFont(new Font("±¼¸²", Font.PLAIN, 20));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		panel.add(lblNewLabel, "name_10126113988224");
+		JPanel backGround = new JPanel();
+		backGround.setBounds(0, 0, 682, 562);
+		frame.getContentPane().add(backGround);
+		backGround.setLayout(null);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(34, 94, 98, 30);
-		frame.getContentPane().add(panel_1);
-		panel_1.setLayout(new CardLayout(0, 0));
+		JPanel panel_1_name = new JPanel();
+		panel_1_name.setBounds(140, 139, 100, 30);
+		backGround.add(panel_1_name);
+		panel_1_name.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_7 = new JLabel("\uC774\uB984");
+		lblNewLabel_7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_1.add(lblNewLabel_7, "name_7411558898245");
+		panel_1_name.add(lblNewLabel_7, "name_7411558898245");
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBounds(34, 166, 98, 30);
-		frame.getContentPane().add(panel_2);
-		panel_2.setLayout(new CardLayout(0, 0));
+		JPanel panel_Type = new JPanel();
+		panel_Type.setBounds(140, 218, 100, 30);
+		backGround.add(panel_Type);
+		panel_Type.setLayout(new CardLayout(0, 0));
 		
 		JLabel label_1 = new JLabel("\uC885");
+		label_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_2.add(label_1, "name_7381087228229");
+		panel_Type.add(label_1, "name_7381087228229");
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(269, 166, 53, 30);
-		frame.getContentPane().add(panel_3);
-		panel_3.setLayout(new CardLayout(0, 0));
+		JPanel panel_3_detailedType = new JPanel();
+		panel_3_detailedType.setBounds(400, 218, 50, 30);
+		backGround.add(panel_3_detailedType);
+		panel_3_detailedType.setLayout(new CardLayout(0, 0));
 		
 		JLabel label_2 = new JLabel("\uD488\uC885");
+		label_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		label_2.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_3.add(label_2, "name_7333055743211");
+		panel_3_detailedType.add(label_2, "name_7333055743211");
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		panel_3.add(lblNewLabel_1, "name_7330088385503");
-		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBounds(34, 202, 98, 30);
-		frame.getContentPane().add(panel_5);
-		panel_5.setLayout(new CardLayout(0, 0));
+		JPanel panel_5_age = new JPanel();
+		panel_5_age.setBounds(140, 264, 100, 30);
+		backGround.add(panel_5_age);
+		panel_5_age.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_3 = new JLabel("\uB098\uC774");
+		lblNewLabel_3.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_5.add(lblNewLabel_3, "name_7458198400508");
+		panel_5_age.add(lblNewLabel_3, "name_7458198400508");
 		
-		JPanel panel_6 = new JPanel();
-		panel_6.setBounds(34, 238, 98, 30);
-		frame.getContentPane().add(panel_6);
-		panel_6.setLayout(new CardLayout(0, 0));
+		JPanel panel_6_weight = new JPanel();
+		panel_6_weight.setBounds(140, 315, 100, 30);
+		backGround.add(panel_6_weight);
+		panel_6_weight.setLayout(new CardLayout(0, 0));
 		
 		JLabel label = new JLabel("\uCCB4\uC911");
+		label.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_6.add(label, "name_7478238134829");
+		panel_6_weight.add(label, "name_7478238134829");
 		
-		JPanel panel_7 = new JPanel();
-		panel_7.setBounds(34, 274, 98, 30);
-		frame.getContentPane().add(panel_7);
-		panel_7.setLayout(new CardLayout(0, 0));
+		JPanel panel_7_comments = new JPanel();
+		panel_7_comments.setBounds(140, 367, 100, 30);
+		backGround.add(panel_7_comments);
+		panel_7_comments.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_4 = new JLabel("\uBE44\uACE0");
+		lblNewLabel_4.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_7.add(lblNewLabel_4, "name_7500653908715");
+		panel_7_comments.add(lblNewLabel_4, "name_7500653908715");
 		
-		JPanel panel_8 = new JPanel();
-		panel_8.setBounds(138, 94, 120, 30);
-		frame.getContentPane().add(panel_8);
-		panel_8.setLayout(new CardLayout(0, 0));
+		JPanel panel_8_nameInput = new JPanel();
+		panel_8_nameInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_8_nameInput.setBounds(260, 139, 120, 30);
+		backGround.add(panel_8_nameInput);
+		panel_8_nameInput.setLayout(new CardLayout(0, 0));
 		
 		JTextArea textArea_1 = new JTextArea();
-		panel_8.add(textArea_1, "name_7274280410622");
+		panel_8_nameInput.add(textArea_1, "name_7274280410622");
 		
-		JPanel panel_9 = new JPanel();
-		panel_9.setBounds(34, 130, 98, 30);
-		frame.getContentPane().add(panel_9);
-		panel_9.setLayout(new CardLayout(0, 0));
+		JPanel panel_9_sex = new JPanel();
+		panel_9_sex.setBounds(140, 179, 100, 30);
+		backGround.add(panel_9_sex);
+		panel_9_sex.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_6 = new JLabel("\uC131\uBCC4");
+		lblNewLabel_6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_9.add(lblNewLabel_6, "name_7432614689786");
-		
-		ButtonGroup group = new ButtonGroup();
+		panel_9_sex.add(lblNewLabel_6, "name_7432614689786");
 		
 		
 		JRadioButton rdbtnNewRadioButton = new JRadioButton("\uC554");
-		rdbtnNewRadioButton.setBounds(148, 130, 43, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton);
-		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC218");
-		rdbtnNewRadioButton_1.setBounds(205, 130, 53, 23);
-		frame.getContentPane().add(rdbtnNewRadioButton_1);
-		group.add(rdbtnNewRadioButton_1);
+		rdbtnNewRadioButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
+		rdbtnNewRadioButton.setBounds(260, 175, 43, 30);
+		backGround.add(rdbtnNewRadioButton);
 		group.add(rdbtnNewRadioButton);
 		
-		JPanel panel_10 = new JPanel();
-		panel_10.setBounds(138, 166, 120, 30);
-		frame.getContentPane().add(panel_10);
-		panel_10.setLayout(new CardLayout(0, 0));
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("\uC218");
+		rdbtnNewRadioButton_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 15));
+		rdbtnNewRadioButton_1.setBounds(308, 175, 53, 30);
+		backGround.add(rdbtnNewRadioButton_1);
+		group.add(rdbtnNewRadioButton_1);
+		
+		JPanel panel_10_speciesInput = new JPanel();
+		panel_10_speciesInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_10_speciesInput.setBounds(260, 218, 120, 30);
+		backGround.add(panel_10_speciesInput);
+		panel_10_speciesInput.setLayout(new CardLayout(0, 0));
 		
 		JTextArea textArea_2 = new JTextArea();
-		panel_10.add(textArea_2, "name_7276584418678");
+		panel_10_speciesInput.add(textArea_2, "name_7276584418678");
 		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBounds(138, 202, 120, 30);
-		frame.getContentPane().add(panel_4);
-		panel_4.setLayout(new CardLayout(0, 0));
+		JPanel panel_4_ageInput = new JPanel();
+		panel_4_ageInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_4_ageInput.setBounds(260, 264, 120, 30);
+		backGround.add(panel_4_ageInput);
+		panel_4_ageInput.setLayout(new CardLayout(0, 0));
 		
 		JTextArea textArea_3 = new JTextArea();
-		panel_4.add(textArea_3, "name_7279072332436");
+		panel_4_ageInput.add(textArea_3, "name_7279072332436");
 		
-		JPanel panel_12 = new JPanel();
-		panel_12.setBounds(260, 238, 37, 30);
-		frame.getContentPane().add(panel_12);
-		panel_12.setLayout(new CardLayout(0, 0));
+		JPanel panel_12_kg = new JPanel();
+		panel_12_kg.setBounds(400, 315, 100, 30);
+		backGround.add(panel_12_kg);
+		panel_12_kg.setLayout(new CardLayout(0, 0));
 		
 		JLabel lblNewLabel_2 = new JLabel("Kg");
-		panel_12.add(lblNewLabel_2, "name_7517021792237");
+		lblNewLabel_2.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
+		panel_12_kg.add(lblNewLabel_2, "name_7517021792237");
 		
-		JPanel panel_11 = new JPanel();
-		panel_11.setBounds(138, 238, 120, 30);
-		frame.getContentPane().add(panel_11);
-		panel_11.setLayout(new CardLayout(0, 0));
+		JPanel panel_11_weightInput = new JPanel();
+		panel_11_weightInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_11_weightInput.setBounds(260, 315, 120, 30);
+		backGround.add(panel_11_weightInput);
+		panel_11_weightInput.setLayout(new CardLayout(0, 0));
 		
 		JTextArea textArea_4 = new JTextArea();
-		panel_11.add(textArea_4, "name_7280800308933");
+		panel_11_weightInput.add(textArea_4, "name_7280800308933");
 		
-		JPanel panel_13 = new JPanel();
-		panel_13.setBounds(138, 274, 308, 114);
-		frame.getContentPane().add(panel_13);
-		panel_13.setLayout(new CardLayout(0, 0));
+		JPanel panel_13_commentsInput = new JPanel();
+		panel_13_commentsInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_13_commentsInput.setBounds(260, 364, 308, 114);
+		backGround.add(panel_13_commentsInput);
+		panel_13_commentsInput.setLayout(new CardLayout(0, 0));
 		
 		textField_4 = new JTextField();
-		panel_13.add(textField_4, "name_11457114844890");
+		panel_13_commentsInput.add(textField_4, "name_11457114844890");
 		textField_4.setColumns(10);
 		
-		JPanel panel_14 = new JPanel();
-		panel_14.setBounds(334, 166, 112, 30);
-		frame.getContentPane().add(panel_14);
-		panel_14.setLayout(new CardLayout(0, 0));
+		JPanel panel_14_detailedSpeInput = new JPanel();
+		panel_14_detailedSpeInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_14_detailedSpeInput.setBounds(470, 218, 112, 30);
+		backGround.add(panel_14_detailedSpeInput);
+		panel_14_detailedSpeInput.setLayout(new CardLayout(0, 0));
 		
-		JTextArea textArea_5 = new JTextArea();
-		panel_14.add(textArea_5, "name_7292336218022");
+		JTextArea textArea_5_detailedSpeciesInput = new JTextArea();
+		panel_14_detailedSpeInput.add(textArea_5_detailedSpeciesInput, "name_7292336218022");
 		
 		JButton button = new JButton("\uD655\uC778");
-		button.setBounds(205, 398, 97, 23);
-		frame.getContentPane().add(button);
+		button.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 13));
+		button.setBounds(460, 499, 110, 30);
+		backGround.add(button);
 		
 		JButton btnNewButton = new JButton("\uCDE8\uC18C");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				frame.dispose();
-				
-			}
-		});
-		btnNewButton.setBounds(326, 398, 97, 23);
-		frame.getContentPane().add(btnNewButton);
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 13));
+		btnNewButton.setBounds(300, 499, 110, 30);
+		backGround.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\uBCF4\uD638\uC790 \uC815\uBCF4");
-		btnNewButton_1.setFont(new Font("±¼¸²", Font.PLAIN, 12));
+		btnNewButton_1.setBounds(140, 499, 110, 30);
+		backGround.add(btnNewButton_1);
+		btnNewButton_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 13));
+		
+		JPanel panel_Title = new JPanel();
+		panel_Title.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_Title.setBounds(140, 49, 390, 70);
+		backGround.add(panel_Title);
+		panel_Title.setLayout(new CardLayout(0, 0));
+		
+		JLabel lblNewLabel = new JLabel("\uC560\uC644\uB3D9\uBB3C \uC815\uBCF4");
+		panel_Title.add(lblNewLabel, "name_6324243965374");
+		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GuardianGUI guardG = new GuardianGUI(); // º¸È£ÀÚ Á¤º¸ °´Ã¼ »ý¼º
 						guardG.main(null);  // º¸È£ÀÚÁ¤º¸ Å¬¸¯½Ã º¸È£ÀÚÁ¤º¸Ã¢ È°¼ºÈ­
 			}
 		});
-		btnNewButton_1.setBounds(33, 398, 120, 23);
-		frame.getContentPane().add(btnNewButton_1);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				
+			}
+		});
 	}
 }

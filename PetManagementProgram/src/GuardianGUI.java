@@ -59,18 +59,19 @@ public class GuardianGUI {
 		frame.getContentPane().add(background);
 		background.setLayout(null);
 		
-		JPanel panel_7 = new JPanel();
-		panel_7.setBounds(430, 444, 108, 34);
-		background.add(panel_7);
-		panel_7.setLayout(new CardLayout(0, 0));
+		JPanel panel_7_button = new JPanel();
+		panel_7_button.setBounds(410, 442, 120, 23);
+		background.add(panel_7_button);
+		panel_7_button.setLayout(new CardLayout(0, 0));
 		
 		Button compButton = new Button("\uC644\uB8CC");
-		panel_7.add(compButton, "name_5037528703030");
-		compButton.setFont(new Font("Dialog", Font.PLAIN, 17));
+		compButton.setBounds(249, 503, 120, 23);
+		panel_7_button.add(compButton, "name_5037528703030");
+		compButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel.setBounds(140, 49, 398, 73);
+		panel.setBounds(140, 49, 390, 70);
 		background.add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
@@ -78,41 +79,42 @@ public class GuardianGUI {
 		panel.add(guardianInfo, "name_4988617370205");
 		guardianInfo.setBackground(SystemColor.window);
 		guardianInfo.setLabelFor(frame);
-		guardianInfo.setFont(new Font("±¼¸²", Font.PLAIN, 50));
+		guardianInfo.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		guardianInfo.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JPanel panel_1_Name = new JPanel();
-		panel_1_Name.setBounds(140, 190, 94, 28);
+		panel_1_Name.setBounds(140, 190, 100, 30);
 		background.add(panel_1_Name);
 		panel_1_Name.setLayout(new CardLayout(0, 0));
 		
 		JLabel Name = new JLabel("\uC774\uB984");
 		panel_1_Name.add(Name, "name_5382253871486");
-		Name.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		Name.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		Name.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_2_contact = new JPanel();
-		panel_2_contact.setBounds(140, 252, 94, 22);
+		panel_2_contact.setBounds(140, 252, 100, 30);
 		background.add(panel_2_contact);
 		panel_2_contact.setLayout(new CardLayout(0, 0));
 		
 		JLabel contactNo = new JLabel("\uC5F0\uB77D\uCC98");
 		panel_2_contact.add(contactNo, "name_5004449119981");
-		contactNo.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		contactNo.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		contactNo.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_3_address = new JPanel();
-		panel_3_address.setBounds(140, 318, 94, 22);
+		panel_3_address.setBounds(140, 318, 100, 30);
 		background.add(panel_3_address);
 		panel_3_address.setLayout(new CardLayout(0, 0));
 		
 		JLabel address = new JLabel("\uC8FC\uC18C");
 		panel_3_address.add(address, "name_5008952993544");
-		address.setFont(new Font("±¼¸²", Font.BOLD, 18));
+		address.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 20));
 		address.setHorizontalAlignment(SwingConstants.LEFT);
 		
 		JPanel panel_4_nameInput = new JPanel();
-		panel_4_nameInput.setBounds(269, 190, 269, 28);
+		panel_4_nameInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_4_nameInput.setBounds(261, 190, 269, 28);
 		background.add(panel_4_nameInput);
 		panel_4_nameInput.setLayout(new CardLayout(0, 0));
 		
@@ -121,7 +123,8 @@ public class GuardianGUI {
 		nameInput.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		
 		JPanel panel_5_coontactInput = new JPanel();
-		panel_5_coontactInput.setBounds(269, 246, 269, 28);
+		panel_5_coontactInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_5_coontactInput.setBounds(261, 254, 269, 28);
 		background.add(panel_5_coontactInput);
 		panel_5_coontactInput.setLayout(new CardLayout(0, 0));
 		
@@ -130,7 +133,8 @@ public class GuardianGUI {
 		contactNoInput.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		
 		JPanel panel_6_addInput = new JPanel();
-		panel_6_addInput.setBounds(269, 318, 269, 78);
+		panel_6_addInput.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		panel_6_addInput.setBounds(261, 318, 269, 78);
 		background.add(panel_6_addInput);
 		panel_6_addInput.setLayout(new CardLayout(0, 0));
 		
