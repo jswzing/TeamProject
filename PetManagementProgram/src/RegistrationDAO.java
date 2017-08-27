@@ -13,8 +13,9 @@ public class RegistrationDAO {
 	private static PreparedStatement pstmt;
 
 	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-	private String id = "onesun777";
-	private String pw = "9977";
+	private String id = "team";
+	private String pw = "1234";
+
 	private ResultSet rs;
 
 	public void insertMember(String regID, String regPW, int regInfo) {
@@ -61,7 +62,7 @@ public class RegistrationDAO {
 			pstmt.setString(1, regID);
 
 			rs = pstmt.executeQuery(); // DB¿¡¼­ ¼¿·ºÆ®ÇÑ ¼¿°ª ¸®ÅÏ
-			
+
 			if (rs.next()) {
 				if (rs.getString(1).equals(regID)) {
 					return true;

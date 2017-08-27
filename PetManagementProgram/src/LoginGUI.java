@@ -15,6 +15,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.BevelBorder;
+import javax.swing.JPasswordField;
 
 public class LoginGUI {
 
@@ -24,8 +25,8 @@ public class LoginGUI {
 	private JPanel panel_3_idInput;
 	private JPanel panel_4_pwInput;
 	private JTextField idInput;
-	private JTextField pwInput;
 	private JPanel panel;
+	private JPasswordField pwInput;
 
 	/**
 	 * Launch the application.
@@ -126,10 +127,8 @@ public class LoginGUI {
 		springLayout.putConstraint(SpringLayout.SOUTH, panel_4_pwInput, 58, SpringLayout.SOUTH, panel_3_idInput);
 		springLayout.putConstraint(SpringLayout.EAST, panel_4_pwInput, 0, SpringLayout.EAST, panel_3_idInput);
 		
-		pwInput = new JTextField();
-		panel_4_pwInput.add(pwInput, "name_10021724021754");
-		pwInput.setFont(new Font("맑은 고딕", Font.PLAIN, 12));
-		pwInput.setColumns(10);
+		pwInput = new JPasswordField();
+		panel_4_pwInput.add(pwInput, "name_497304779581055");
 		
 		idInput = new JTextField();
 		panel_3_idInput.add(idInput, "name_10019652002706");
@@ -142,26 +141,45 @@ public class LoginGUI {
 		lblPw.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		JButton newMember = new JButton("\uD68C\uC6D0\uAC00\uC785");
+		newMember.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				RegistrationGUI reg = new RegistrationGUI();
+				reg.main(null);
+			}
+		});
 		newMember.setFont(new Font("맑은 고딕", Font.PLAIN, 17));
 		newMember.setBounds(430, 350, 110, 30);
 		panel.add(newMember);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(260, 282, 255, 30);
+		panel.add(panel_1);
+		panel_1.setLayout(new CardLayout(0, 0));
+		
+		JLabel errorLabel = new JLabel("");
+		errorLabel.setForeground(Color.RED);
+		errorLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		errorLabel.setFont(new Font("굴림", Font.PLAIN, 19));
+		panel_1.add(errorLabel, "name_497813059461811");
 		
 		JButton login = new JButton("\uB85C\uADF8\uC778");
 		login.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
 				LoginDAO login1 = new LoginDAO(); //loginDAO 객체 생성
-				LoginVO vo=login1.selectLogin(idInput.getText(), pwInput.getText());//loginDAO에 관리자 인지아닌지 구분하는 메소드 selectLogin구현
+				LoginVO vo = login1.selectLogin(idInput.getText(), pwInput.getText());//loginDAO에 관리자 인지아닌지 구분하는 메소드 selectLogin구현
 				//LoginVO객체를 생성해서 m값을 받음
 				if(vo.getM()==1){
 					MenuGUI manager = new MenuGUI();
 					manager.main(null);
 					frame.dispose();
 				}
-				else{
+				else if(vo.getM()==2){
 					MenuGUI general = new MenuGUI();
 					general.main(null);
 					frame.dispose();
+				}else {
+					errorLabel.setText("아이디나 비밀번호가 틀립니다");
 				}
 			}
 		});
@@ -173,5 +191,7 @@ public class LoginGUI {
 		login.setFont(new Font("맑은 고딕", Font.PLAIN, 17));
 		springLayout.putConstraint(SpringLayout.WEST, newMember, 75, SpringLayout.EAST, login);
 		springLayout.putConstraint(SpringLayout.SOUTH, newMember, 0, SpringLayout.SOUTH, login);
+		
+
 	}
 }

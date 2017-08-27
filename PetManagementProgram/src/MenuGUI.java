@@ -176,9 +176,9 @@ public class MenuGUI {
 		Button5 = new JButton("\uB85C\uADF8\uC544\uC6C3");
 		Button5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+				frame.dispose();      // ·Î±×¾Æ¿ô¹öÆ° Å¬¸¯½Ã Ã¢´ÝÈû
 				LoginGUI loginG = new LoginGUI();
-				loginG.main(null);
+				loginG.main(null);   // Ã¢´ÝÈ÷°í ·Î±×ÀÎÈ­¸é ¿ÀÇÂ
 			}
 		});
 		springLayout.putConstraint(SpringLayout.NORTH, label_4, 5, SpringLayout.NORTH, Button5);
