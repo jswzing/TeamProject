@@ -149,6 +149,12 @@ public class MenuGUI {
 		frame.getContentPane().add(Button2);
 		
 		Button3 = new JButton("\uC0AD \uC81C");
+		Button3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { //삭제버튼
+				DeletionGUI deleG = new DeletionGUI();
+				deleG.main(null); //삭제창 활성화
+			}
+		});
 		springLayout.putConstraint(SpringLayout.SOUTH, label_2, 0, SpringLayout.SOUTH, Button3);
 		springLayout.putConstraint(SpringLayout.EAST, label_2, -6, SpringLayout.WEST, Button3);
 		springLayout.putConstraint(SpringLayout.NORTH, Button3, 255, SpringLayout.NORTH, frame.getContentPane());

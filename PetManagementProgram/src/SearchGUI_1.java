@@ -91,6 +91,7 @@ public class SearchGUI_1 {
 		Button button = new Button("\uC870\uD68C\uD558\uAE30");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		button.setBounds(457, 77, 137, 32);

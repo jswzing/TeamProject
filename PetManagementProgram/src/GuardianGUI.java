@@ -16,6 +16,8 @@ import javax.swing.JTextArea;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GuardianGUI {
 
@@ -134,6 +136,11 @@ public class GuardianGUI {
 		addressInput.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		
 		JButton btnNewButton = new JButton("\uC644\uB8CC");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
 		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		btnNewButton.setBounds(433, 442, 100, 30);
 		background.add(btnNewButton);
