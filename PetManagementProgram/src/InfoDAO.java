@@ -47,7 +47,7 @@ public class InfoDAO {// 애견정보&보호자 입력 테이블
 	}
 
 	public void insertPetInfo(int regiNum, String name, int gender, String species, String form, int age, int weight,
-			String comments) {
+			String comments,String gName,String gPhone,String gAddress) {
 		InfoVO infovo = null;
 		// 펫 정보를 DB에 Insert 하기
 		try { // 예외처리 할 부분
@@ -72,9 +72,9 @@ public class InfoDAO {// 애견정보&보호자 입력 테이블
 			pstmt.setInt(6, age);
 			pstmt.setInt(7, weight);
 			pstmt.setString(8, comments);
-			pstmt.setString(9, null);
-			pstmt.setString(10, null);
-			pstmt.setString(11, null);
+			pstmt.setString(9, gName);
+			pstmt.setString(10, gPhone);
+			pstmt.setString(11, gAddress);
 			pstmt.executeUpdate();
 
 		} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
