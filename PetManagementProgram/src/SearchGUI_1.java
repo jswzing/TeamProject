@@ -5,12 +5,16 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.CardLayout;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import java.awt.Button;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextArea;
 import java.awt.Color;
 import javax.swing.JComboBox;
@@ -24,6 +28,7 @@ public class SearchGUI_1 {
 
 	private JFrame frame;
 	private JTextField txtxx;
+	private String searchName = "";
 
 	/**
 	 * Launch the application.
@@ -88,35 +93,59 @@ public class SearchGUI_1 {
 		txtxx.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(txtxx, "name_11642339154267");
 		txtxx.setColumns(10);
-		
+
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 125, 666, 32);
 		frame.getContentPane().add(panel_3);
-		
+
 		JLabel lblNewLabel_1 = new JLabel("\uC870\uD68C\uBAA9\uB85D");
 		lblNewLabel_1.setFont(new Font("굴림", Font.PLAIN, 22));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
-		gl_panel_3.setHorizontalGroup(
-			gl_panel_3.createParallelGroup(Alignment.LEADING)
-				.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 666, GroupLayout.PREFERRED_SIZE)
-		);
-		gl_panel_3.setVerticalGroup(
-			gl_panel_3.createParallelGroup(Alignment.LEADING)
-				.addComponent(lblNewLabel_1, GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE)
-		);
+		gl_panel_3.setHorizontalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel_1,
+				GroupLayout.PREFERRED_SIZE, 666, GroupLayout.PREFERRED_SIZE));
+		gl_panel_3.setVerticalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel_1,
+				GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE));
 		panel_3.setLayout(gl_panel_3);
-		
-		
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 167, 666, 379);
 		frame.getContentPane().add(scrollPane);
-		
-		JTextArea textArea = new JTextArea();
-		scrollPane.setViewportView(textArea);
-		
+
 		JButton btnNewButton = new JButton("\uC870\uD68C\uD558\uAE30");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) { // 조회하기 버튼 액션
+				SearchDAO searchD = new SearchDAO(); // DB랑 연동하기위한 객체 생성
+				searchName = txtxx.getText(); // 검색텍스트 필드값 변수에 저장
+
+				ArrayList<SearchVO> al = searchD.searchPetName(txtxx.getText().toString());
+
+				String[] col = { "등록번호", "이름", "성별", "종", "품총", "나이", "무게", "1", "2", "3", "4" };
+				String[][] row = new String[al.size()][col.length];
+				int index = 0;
+				for (SearchVO sv : al) {
+					row[index][0] = sv.getNum() + "";
+					row[index][1] = sv.getName() + "";
+					row[index][2] = sv.getGender() + "";
+					row[index][3] = sv.getSpec() + "";
+					row[index][4] = sv.getDspec() + "";
+					row[index][5] = sv.getAge() + "";
+					row[index][6] = sv.getWeight() + "";
+					row[index][7] = sv.getA() + "";
+					row[index][8] = sv.getB() + "";
+					row[index][9] = sv.getC() + "";
+					row[index][10] = sv.getD() + "";
+					index++;
+
+				}
+
+				DefaultTableModel model = new DefaultTableModel(row, col);
+				JTable textArea = new JTable(model);
+				scrollPane.setViewportView(textArea);
+
+			}
+
+		});
 		btnNewButton.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
 		btnNewButton.setBounds(445, 77, 119, 32);
 		frame.getContentPane().add(btnNewButton);
