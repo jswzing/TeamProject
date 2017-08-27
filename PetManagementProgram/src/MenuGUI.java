@@ -90,12 +90,14 @@ public class MenuGUI {
 		springLayout.putConstraint(SpringLayout.NORTH, Button1, 31, SpringLayout.SOUTH, panel);
 		springLayout.putConstraint(SpringLayout.SOUTH, Button1, -413, SpringLayout.SOUTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, Button1, -200, SpringLayout.EAST, frame.getContentPane());
+		///////////////////////////////////////////////추가버튼 이벤트 ///////////////////////////////////////////////////
 		Button1.addActionListener(new ActionListener() { // 추가버튼 클릭
 			public void actionPerformed(ActionEvent e) {
 				InfoGUI infoG = new InfoGUI();
 				infoG.main(null);   // 추가 버튼 틀릭 시 InfoGUI창 활성화
 			}
 		});
+		//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		Button1.setFont(new Font("맑은 고딕", Font.PLAIN, 24));
 		frame.getContentPane().add(Button1);
 		
@@ -139,8 +141,15 @@ public class MenuGUI {
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
 		label_4.setFont(new Font("맑은 고딕", Font.PLAIN, 30));
 		frame.getContentPane().add(label_4);
-		
+		///////////////////////////////수정버튼 이벤트//////////////////////////////////////////
 		Button2 = new JButton("\uC218 \uC815");
+		Button2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		////////////////////////////////////////////////////////////////////////////////////
 		springLayout.putConstraint(SpringLayout.WEST, Button2, 1, SpringLayout.EAST, label_1);
 		springLayout.putConstraint(SpringLayout.EAST, Button2, -200, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, label_1, 0, SpringLayout.SOUTH, Button2);
