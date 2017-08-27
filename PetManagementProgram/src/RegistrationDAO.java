@@ -13,8 +13,8 @@ public class RegistrationDAO {
 	private static PreparedStatement pstmt;
 
 	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-	private String id = "net3";
-	private String pw = "1234";
+	private String id = "onesun777";
+	private String pw = "9977";
 	private ResultSet rs;
 
 	public void insertMember(String regID, String regPW, int regInfo) {

@@ -11,8 +11,8 @@ public class InfoDAO {//애견정보&보호자 입력 테이블
 	private static PreparedStatement pstmt;
 
 	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-	private String id = "net3";
-	private String pw = "1234";
+	private String id = "onesun777";
+	private String pw = "9977";
 	private ResultSet rs;
 
 	public void createTable() {
