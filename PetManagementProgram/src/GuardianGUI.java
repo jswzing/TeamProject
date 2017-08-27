@@ -16,10 +16,15 @@ import javax.swing.JTextArea;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GuardianGUI {
 
 	private JFrame frame;
+	private String Gname;
+	private String Gphone;
+	private String Gaddress;
 
 	/**
 	 * Launch the application.
@@ -134,8 +139,29 @@ public class GuardianGUI {
 		addressInput.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		
 		JButton btnNewButton = new JButton("\uC644\uB8CC");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Gname = nameInput.getText().toString();
+				Gphone= contactNoInput.getText().toString();
+				Gaddress = addressInput.getText().toString();
+				frame.dispose();	
+			}
+		});
 		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		btnNewButton.setBounds(433, 442, 100, 30);
 		background.add(btnNewButton);
 	}
+
+	public String getGname() {
+		return Gname;
+	}
+
+	public String getGphone() {
+		return Gphone;
+	}
+
+	public String getGaddress() {
+		return Gaddress;
+	}
+	
 }

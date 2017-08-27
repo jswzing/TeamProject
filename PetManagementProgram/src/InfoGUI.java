@@ -52,7 +52,7 @@ public class InfoGUI {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setResizable(false);
-		frame.setBounds(100, 100, 716, 618);
+		frame.setBounds(100, 100, 704, 643);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
@@ -230,80 +230,82 @@ public class InfoGUI {
 		panel_Title.add(lblNewLabel, "name_6324243965374");
 		lblNewLabel.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		
+
 		JPanel idpanel = new JPanel();
 		idpanel.setBounds(360, 62, 73, 30);
 		backGround.add(idpanel);
 		idpanel.setLayout(new CardLayout(0, 0));
-		
+
 		JLabel lblNewLabel_1 = new JLabel("\uB4F1\uB85D\uBC88\uD638");
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		idpanel.add(lblNewLabel_1, "name_509624414968705");
-		
+
+
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(100, 415, 100, 30);
 		backGround.add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
-		
+
 		JLabel lblNewLabel_5 = new JLabel("\uBCF4\uD638\uC790 \uC774\uB984");
 		lblNewLabel_5.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel_5, "name_341306126706808");
-		
+
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(100, 455, 100, 30);
 		backGround.add(panel_2);
 		panel_2.setLayout(new CardLayout(0, 0));
-		
+
 		JLabel lblNewLabel_8 = new JLabel("\uC5F0\uB77D\uCC98");
 		lblNewLabel_8.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_8.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		panel_2.add(lblNewLabel_8, "name_341313030601789");
-		
+
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(100, 495, 100, 30);
 		backGround.add(panel_3);
 		panel_3.setLayout(new CardLayout(0, 0));
-		
+
 		JLabel lblNewLabel_9 = new JLabel("\uC8FC\uC18C");
 		lblNewLabel_9.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_9.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		panel_3.add(lblNewLabel_9, "name_341318006622795");
-		
+
 		JPanel panel_4 = new JPanel();
 		panel_4.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_4.setBounds(220, 411, 120, 34);
 		backGround.add(panel_4);
 		panel_4.setLayout(new CardLayout(0, 0));
-		
+
 		JTextArea taGuardianName = new JTextArea();
 		panel_4.add(taGuardianName, "name_341227407124437");
-		
+
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_5.setBounds(220, 451, 190, 34);
 		backGround.add(panel_5);
 		panel_5.setLayout(new CardLayout(0, 0));
-		
+
 		JTextArea taGuardianPhone = new JTextArea();
 		panel_5.add(taGuardianPhone, "name_341287062794055");
-		
+
 		JPanel panel_6 = new JPanel();
 		panel_6.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel_6.setBounds(220, 491, 346, 34);
 		backGround.add(panel_6);
 		panel_6.setLayout(new CardLayout(0, 0));
-		
+
 		JTextArea taGaurdianAdr = new JTextArea();
 		panel_6.add(taGaurdianAdr, "name_341292014801966");
-		
+
+
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.setBounds(446, 62, 120, 30);
 		backGround.add(panel);
 		panel.setLayout(new CardLayout(0, 0));
-		
+
 		JTextArea regiNumInput = new JTextArea();
 		panel.add(regiNumInput, "name_342114458409714");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -323,9 +325,11 @@ public class InfoGUI {
 					gender = 1;
 				}
 
-				info.insertPetInfo(Integer.parseInt(regiNumInput.getText()),pteNameInput.getText().toString(), gender, speciesInput.getText().toString(),
-						detailedSpeciesInput.getText().toString(), Integer.parseInt(ageInput.getText()),
-						Integer.parseInt(kgInput.getText()), etcInput.getText().toString());
+				info.insertPetInfo(Integer.parseInt(regiNumInput.getText()), pteNameInput.getText().toString(), gender,
+						speciesInput.getText().toString(), detailedSpeciesInput.getText().toString(),
+						Integer.parseInt(ageInput.getText()), Integer.parseInt(kgInput.getText()),
+						etcInput.getText().toString(), taGuardianName.getText().toString(),
+						taGuardianPhone.getText().toString(), taGaurdianAdr.getText().toString());
 				frame.dispose();
 
 			}
