@@ -18,6 +18,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
 
 public class SearchGUI_1 {
 
@@ -87,15 +88,6 @@ public class SearchGUI_1 {
 		txtxx.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_2.add(txtxx, "name_11642339154267");
 		txtxx.setColumns(10);
-
-		Button button = new Button("\uC870\uD68C\uD558\uAE30");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-			}
-		});
-		button.setBounds(457, 77, 137, 32);
-		frame.getContentPane().add(button);
-		button.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBounds(12, 125, 666, 32);
@@ -123,5 +115,10 @@ public class SearchGUI_1 {
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
+		
+		JButton btnNewButton = new JButton("\uC870\uD68C\uD558\uAE30");
+		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
+		btnNewButton.setBounds(445, 77, 119, 32);
+		frame.getContentPane().add(btnNewButton);
 	}
 }
