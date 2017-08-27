@@ -21,11 +21,12 @@ public class DeletionDAO {
 		String sql = "select REGINUM from INFO where REGINUM=?"; // info테이블에 일련번호(reginum)값을 select함
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, serialNumber);
-		rs = pstmt.executeQuery();
+		rs = pstmt.executeQuery(); //실행
 		if(rs.next()) { //select값이 있으면
 			String sql2 ="delete from INFO where REGINUM = ?";//info 테이블에 일련번호값을 delete함
 			pstmt = conn.prepareStatement(sql2);
 			pstmt.setInt(1, serialNumber);
+			rs = pstmt.executeQuery(); //실행
 			return 0; //0값 = GUI의 result에 성공값
 		} else {//select값이 없으면
 			return 1; //1값 = GUI의 result에 실패값
