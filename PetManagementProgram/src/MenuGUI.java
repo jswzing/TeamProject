@@ -174,6 +174,13 @@ public class MenuGUI {
 		frame.getContentPane().add(Button4);
 		
 		Button5 = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		Button5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				LoginGUI loginG = new LoginGUI();
+				loginG.main(null);
+			}
+		});
 		springLayout.putConstraint(SpringLayout.NORTH, label_4, 5, SpringLayout.NORTH, Button5);
 		springLayout.putConstraint(SpringLayout.NORTH, Button5, 24, SpringLayout.SOUTH, Button4);
 		springLayout.putConstraint(SpringLayout.WEST, Button5, 0, SpringLayout.WEST, Button1);
