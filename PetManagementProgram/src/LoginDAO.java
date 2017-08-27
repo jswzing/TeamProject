@@ -16,7 +16,7 @@ public class LoginDAO {
 		private static PreparedStatement pstmt;
 
 		private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
-		private String dbId = "net3";
+		private String dbId = "team";
 		private String dbPw = "1234";
 		private ResultSet rs;
 		
@@ -47,10 +47,10 @@ public class LoginDAO {
 			}
 	
 		}
+		
 		public LoginVO selectLogin(String id, String pw){
 			LoginVO loginvo = null;
-			System.out.println(id);
-			System.out.println(pw);
+
 			try { // 예외처리 할 부분
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				conn = DriverManager.getConnection(url, dbId, dbPw);
@@ -61,9 +61,10 @@ public class LoginDAO {
 				
 				rs = pstmt.executeQuery();
 				if(rs.next()){
-					System.out.println("성공");
 					loginvo=new LoginVO(rs.getString("id"),rs.getString("pw"),rs.getInt("m"));		
-				}else{}//아이디가 없을경우 예외처리 구현해야함
+				}else{
+					loginvo=new LoginVO(null, null, 0);
+				}//아이디가 없을경우 예외처리 구현해야함
 				
 
 			} catch (ClassNotFoundException e) { // 예외처리 잡아주는 부분
