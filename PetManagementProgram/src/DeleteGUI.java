@@ -164,6 +164,7 @@ public class DeleteGUI {
 		springLayout.putConstraint(SpringLayout.NORTH, deleteButton, 30, SpringLayout.SOUTH, panel);
 		springLayout.putConstraint(SpringLayout.SOUTH, deleteButton, 0, SpringLayout.SOUTH, panel_1);
 		springLayout.putConstraint(SpringLayout.EAST, deleteButton, -63, SpringLayout.EAST, frame.getContentPane());
+		
 		deleteButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				serialNumber = Integer.parseInt(txtxx.getText());
@@ -207,13 +208,17 @@ public class DeleteGUI {
 		frame.getContentPane().add(deleteButton);
 		
 				JButton modifyButton = new JButton("\uC218 \uC815");
-				springLayout.putConstraint(SpringLayout.WEST, deleteButton, 6, SpringLayout.EAST, modifyButton);
+				springLayout.putConstraint(SpringLayout.WEST, deleteButton, 16, SpringLayout.EAST, modifyButton);
 				springLayout.putConstraint(SpringLayout.NORTH, modifyButton, 98, SpringLayout.NORTH, frame.getContentPane());
-				springLayout.putConstraint(SpringLayout.WEST, modifyButton, 16, SpringLayout.EAST, panel_2);
-				springLayout.putConstraint(SpringLayout.SOUTH, modifyButton, 130, SpringLayout.NORTH, frame.getContentPane());
-				springLayout.putConstraint(SpringLayout.EAST, modifyButton, -154, SpringLayout.EAST, frame.getContentPane());
+				springLayout.putConstraint(SpringLayout.WEST, modifyButton, 6, SpringLayout.EAST, panel_2);
+				springLayout.putConstraint(SpringLayout.SOUTH, modifyButton, 0, SpringLayout.SOUTH, panel_1);
+				springLayout.putConstraint(SpringLayout.EAST, modifyButton, -164, SpringLayout.EAST, frame.getContentPane());
 				modifyButton.addActionListener(new ActionListener() {
 					public void actionPerformed(ActionEvent e) { // 수정하기 버튼 액션
+						serialNumber = Integer.parseInt(txtxx.getText());
+						ModifyDAO modi = new ModifyDAO();
+						ModifyGUI infog = new ModifyGUI(serialNumber);
+						infog.main(serialNumber);
 						
 					}
 				});

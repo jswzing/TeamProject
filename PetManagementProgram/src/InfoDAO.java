@@ -15,7 +15,6 @@ public class InfoDAO {// 애견정보&보호자 입력 테이블
 	private String pw = "1234";
 
 	private ResultSet rs;
-	int regiNum = 1;
 
 	public void createTable() {
 

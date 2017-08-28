@@ -19,9 +19,11 @@ import javax.swing.JTextArea;
 import javax.swing.border.BevelBorder;
 
 public class InfoGUI {
+	
 
 	private JFrame frame;
 	private JTextField etcInput;
+	private static int num=0;
 
 	/**
 	 * Launch the application.
@@ -241,7 +243,6 @@ public class InfoGUI {
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		idpanel.add(lblNewLabel_1, "name_509624414968705");
 
-
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(100, 415, 100, 30);
 		backGround.add(panel_1);
@@ -299,7 +300,6 @@ public class InfoGUI {
 		JTextArea taGaurdianAdr = new JTextArea();
 		panel_6.add(taGaurdianAdr, "name_341292014801966");
 
-
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		panel.setBounds(446, 62, 120, 30);
@@ -314,6 +314,7 @@ public class InfoGUI {
 
 			}
 		});
+
 		//////////////////// 확인버튼 클릭시 정보입력///////////////////////
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -335,4 +336,5 @@ public class InfoGUI {
 			}
 		});
 	}
+
 }

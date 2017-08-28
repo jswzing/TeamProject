@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class DeletionDAO {
+	
 	private static Connection conn; // connection 인터페이스
 	private static Statement stmt; // statement 인터페이스
 	private static PreparedStatement pstmt;
@@ -14,6 +15,7 @@ public class DeletionDAO {
 	private String url = "jdbc:oracle:thin:@127.0.0.1:1521:XE";
 	private String id = "team";
 	private String pw = "1234";
+	
 	public int deleteInfo(int serialNumber) {
 	try { // 예외처리 할 부분
 		Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -22,6 +24,7 @@ public class DeletionDAO {
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, serialNumber);
 		rs = pstmt.executeQuery(); //실행
+	
 		if(rs.next()) { //select값이 있으면
 			String sql2 ="delete from INFO where REGINUM = ?";//info 테이블에 일련번호값을 delete함
 			pstmt = conn.prepareStatement(sql2);
