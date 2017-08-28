@@ -31,6 +31,8 @@ public class DeleteGUI {
 	private JFrame frame;
 	private JTextField txtxx;
 	private String searchName = "";
+	private int serialNumber;
+
 
 	/**
 	 * Launch the application.
@@ -92,7 +94,7 @@ public class DeleteGUI {
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(new CardLayout(0, 0));
 
-		JLabel lblNewLabel = new JLabel("\uAC80 \uC0C9");
+		JLabel lblNewLabel = new JLabel("\uB4F1\uB85D\uBC88\uD638");
 		lblNewLabel.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1.add(lblNewLabel, "name_16116774043705");
@@ -133,29 +135,7 @@ public class DeleteGUI {
 		springLayout.putConstraint(SpringLayout.EAST, scrollPane, -35, SpringLayout.EAST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, scrollPane, 546, SpringLayout.NORTH, frame.getContentPane());
 		frame.getContentPane().add(scrollPane);
-
-		JButton modifyButton = new JButton("\uC218 \uC815");
-		springLayout.putConstraint(SpringLayout.NORTH, modifyButton, 98, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, modifyButton, 16, SpringLayout.EAST, panel_2);
-		springLayout.putConstraint(SpringLayout.SOUTH, modifyButton, 130, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, modifyButton, -154, SpringLayout.EAST, frame.getContentPane());
-		modifyButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { // 조회하기 버튼 액션
-				
-			}
-		});
-		modifyButton.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
-		frame.getContentPane().add(modifyButton);
 		
-		JButton deleteButton = new JButton("\uC0AD \uC81C");
-		springLayout.putConstraint(SpringLayout.NORTH, deleteButton, 30, SpringLayout.SOUTH, panel);
-		springLayout.putConstraint(SpringLayout.WEST, deleteButton, 6, SpringLayout.EAST, modifyButton);
-		springLayout.putConstraint(SpringLayout.SOUTH, deleteButton, 0, SpringLayout.SOUTH, panel_1);
-		springLayout.putConstraint(SpringLayout.EAST, deleteButton, -63, SpringLayout.EAST, frame.getContentPane());
-		deleteButton.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
-		frame.getContentPane().add(deleteButton);
-		
-
 		String[] col = { "등록번호", "이름", "성별", "종", "품종", "나이", "무게", "비고", "주인이름", "전화번호", "주소" };
 		String[][] row = new String[al.size()][col.length];
 		int index = 0;
@@ -175,8 +155,72 @@ public class DeleteGUI {
 
 		}
 
+
 		DefaultTableModel model = new DefaultTableModel(row, col);
 		JTable textArea = new JTable(model);
 		scrollPane.setViewportView(textArea);
+		
+		JButton deleteButton = new JButton("\uC0AD \uC81C");
+		springLayout.putConstraint(SpringLayout.NORTH, deleteButton, 30, SpringLayout.SOUTH, panel);
+		springLayout.putConstraint(SpringLayout.SOUTH, deleteButton, 0, SpringLayout.SOUTH, panel_1);
+		springLayout.putConstraint(SpringLayout.EAST, deleteButton, -63, SpringLayout.EAST, frame.getContentPane());
+		deleteButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				serialNumber = Integer.parseInt(txtxx.getText());
+				DeletionDAO deleD = new DeletionDAO();//deletionDAO 객체 생성
+				int result = deleD.deleteInfo(serialNumber);
+				ResultDeletionGUI resultDel = new ResultDeletionGUI(result); // 삭제결과GUI 생성
+				if(result == 0) { //성공시
+					resultDel.main(result);
+					ArrayList<SearchVO> al = searchD.searchPetNameAll();
+					String[] col = { "등록번호", "이름", "성별", "종", "품종", "나이", "무게", "비고", "주인이름", "전화번호", "주소" };
+					String[][] row = new String[al.size()][col.length];
+					int index = 0;
+					for (SearchVO sv : al) {
+						row[index][0] = sv.getNum() + "";
+						row[index][1] = sv.getName() + "";
+						row[index][2] = sv.getGender() + "";
+						row[index][3] = sv.getSpec() + "";
+						row[index][4] = sv.getDspec() + "";
+						row[index][5] = sv.getAge() + "";
+						row[index][6] = sv.getWeight() + "";
+						row[index][7] = sv.getA() + "";
+						row[index][8] = sv.getB() + "";
+						row[index][9] = sv.getC() + "";
+						row[index][10] = sv.getD() + "";
+						index++;
+					}
+					DefaultTableModel model = new DefaultTableModel(row, col);
+					JTable textArea = new JTable(model);
+					scrollPane.setViewportView(textArea);
+
+				} else if(result == 1) { //실패시
+					resultDel.main(result);
+
+				} else {
+					resultDel.main(result);//예외시
+
+				}
+			}
+		});
+		deleteButton.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+		frame.getContentPane().add(deleteButton);
+		
+				JButton modifyButton = new JButton("\uC218 \uC815");
+				springLayout.putConstraint(SpringLayout.WEST, deleteButton, 6, SpringLayout.EAST, modifyButton);
+				springLayout.putConstraint(SpringLayout.NORTH, modifyButton, 98, SpringLayout.NORTH, frame.getContentPane());
+				springLayout.putConstraint(SpringLayout.WEST, modifyButton, 16, SpringLayout.EAST, panel_2);
+				springLayout.putConstraint(SpringLayout.SOUTH, modifyButton, 130, SpringLayout.NORTH, frame.getContentPane());
+				springLayout.putConstraint(SpringLayout.EAST, modifyButton, -154, SpringLayout.EAST, frame.getContentPane());
+				modifyButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) { // 수정하기 버튼 액션
+						
+					}
+				});
+				modifyButton.setFont(new Font("맑은 고딕", Font.PLAIN, 18));
+				frame.getContentPane().add(modifyButton);
+	}
+	public int getSerialNumber() {
+		return serialNumber;
 	}
 }
