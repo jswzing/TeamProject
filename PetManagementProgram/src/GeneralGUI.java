@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import javax.swing.BoxLayout;
+import javax.swing.border.BevelBorder;
+import java.awt.Color;
 
 public class GeneralGUI {
 
@@ -51,10 +53,12 @@ public class GeneralGUI {
 		frame.getContentPane().setLayout(springLayout);
 		
 		JPanel panel = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel, 10, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, panel, 129, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel, 80, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.NORTH, panel, 43, SpringLayout.NORTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel, 113, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, panel, 519, SpringLayout.WEST, frame.getContentPane());
+		panel.setBounds(140, 20, 390, 70);
+		panel.setBackground(Color.WHITE);
+		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
@@ -66,10 +70,10 @@ public class GeneralGUI {
 		jlbGeneralSearchTitle.setBackground(SystemColor.inactiveCaptionBorder);
 		
 		JPanel panel_1 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 82, SpringLayout.SOUTH, panel);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_1, 47, SpringLayout.SOUTH, panel);
 		springLayout.putConstraint(SpringLayout.WEST, panel_1, 129, SpringLayout.WEST, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -329, SpringLayout.SOUTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, panel_1, 0, SpringLayout.EAST, panel);
+		springLayout.putConstraint(SpringLayout.EAST, panel_1, -165, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 0, SpringLayout.WEST, panel_1);
 		frame.getContentPane().add(panel_1);
 		SpringLayout sl_panel_1 = new SpringLayout();
 		panel_1.setLayout(sl_panel_1);
@@ -96,9 +100,10 @@ public class GeneralGUI {
 		panel_2.add(label, "name_326916481994731");
 		
 		JPanel panel_3 = new JPanel();
-		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 41, SpringLayout.SOUTH, panel_1);
-		springLayout.putConstraint(SpringLayout.WEST, panel_3, 129, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -43, SpringLayout.NORTH, panel_3);
+		springLayout.putConstraint(SpringLayout.NORTH, panel_3, 274, SpringLayout.NORTH, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, panel_3, -218, SpringLayout.SOUTH, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel_3, 129, SpringLayout.WEST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.EAST, panel_3, 519, SpringLayout.WEST, frame.getContentPane());
 		frame.getContentPane().add(panel_3);
 		SpringLayout sl_panel_3 = new SpringLayout();
