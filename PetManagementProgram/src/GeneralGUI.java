@@ -12,6 +12,8 @@ import javax.swing.JLabel;
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import javax.swing.BoxLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class GeneralGUI {
 
@@ -75,6 +77,12 @@ public class GeneralGUI {
 		panel_1.setLayout(sl_panel_1);
 		
 		JButton jbGenerSearch = new JButton("\uC870 \uD68C");
+		jbGenerSearch.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				SearchGUI_1 searG = new SearchGUI_1();
+				searG.main(null);  // °Ë»öÃ¢ È°¼ºÈ­
+			}
+		});
 		sl_panel_1.putConstraint(SpringLayout.EAST, jbGenerSearch, -40, SpringLayout.EAST, panel_1);
 		jbGenerSearch.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		panel_1.add(jbGenerSearch);

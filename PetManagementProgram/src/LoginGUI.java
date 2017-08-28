@@ -175,7 +175,7 @@ public class LoginGUI {
 					frame.dispose();
 				}
 				else if(vo.getM()==2){
-					MenuGUI general = new MenuGUI();
+					GeneralGUI general = new GeneralGUI();
 					general.main(null);
 					frame.dispose();
 				}else {
