@@ -121,7 +121,7 @@ public class SearchGUI_1 {
 
 				ArrayList<SearchVO> al = searchD.searchPetName(txtxx.getText().toString());
 
-				String[] col = { "등록번호", "이름", "성별", "종", "품총", "나이", "무게", "1", "2", "3", "4" };
+				String[] col = { "등록번호", "이름", "성별", "종", "품종", "나이", "무게", "비고", "주인이름", "전화번호", "주소" };
 				String[][] row = new String[al.size()][col.length];
 				int index = 0;
 				for (SearchVO sv : al) {
