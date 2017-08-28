@@ -56,9 +56,9 @@ public class GeneralGUI {
 		
 		JPanel panel = new JPanel();
 		springLayout.putConstraint(SpringLayout.NORTH, panel, 45, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.WEST, panel, 158, SpringLayout.WEST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.WEST, panel, 147, SpringLayout.WEST, frame.getContentPane());
 		springLayout.putConstraint(SpringLayout.SOUTH, panel, 115, SpringLayout.NORTH, frame.getContentPane());
-		springLayout.putConstraint(SpringLayout.EAST, panel, -136, SpringLayout.EAST, frame.getContentPane());
+		springLayout.putConstraint(SpringLayout.EAST, panel, -147, SpringLayout.EAST, frame.getContentPane());
 		panel.setBounds(140, 20, 390, 70);
 		panel.setBackground(Color.WHITE);
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -81,31 +81,18 @@ public class GeneralGUI {
 		panel_1.setLayout(sl_panel_1);
 		
 		JButton jbGenerSearch = new JButton("\uC870 \uD68C");
+		sl_panel_1.putConstraint(SpringLayout.NORTH, jbGenerSearch, 10, SpringLayout.NORTH, panel_1);
+		sl_panel_1.putConstraint(SpringLayout.WEST, jbGenerSearch, 98, SpringLayout.WEST, panel_1);
+		sl_panel_1.putConstraint(SpringLayout.SOUTH, jbGenerSearch, -10, SpringLayout.SOUTH, panel_1);
+		sl_panel_1.putConstraint(SpringLayout.EAST, jbGenerSearch, -71, SpringLayout.EAST, panel_1);
 		jbGenerSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				SearchGUI_1 searG = new SearchGUI_1();
 				searG.main(null);  // °Ë»öÃ¢ È°¼ºÈ­
 			}
 		});
-		sl_panel_1.putConstraint(SpringLayout.EAST, jbGenerSearch, -40, SpringLayout.EAST, panel_1);
 		jbGenerSearch.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		panel_1.add(jbGenerSearch);
-		
-		JPanel panel_2 = new JPanel();
-		sl_panel_1.putConstraint(SpringLayout.NORTH, jbGenerSearch, 0, SpringLayout.NORTH, panel_2);
-		sl_panel_1.putConstraint(SpringLayout.WEST, jbGenerSearch, 21, SpringLayout.EAST, panel_2);
-		sl_panel_1.putConstraint(SpringLayout.SOUTH, jbGenerSearch, 0, SpringLayout.SOUTH, panel_2);
-		sl_panel_1.putConstraint(SpringLayout.NORTH, panel_2, 10, SpringLayout.NORTH, panel_1);
-		sl_panel_1.putConstraint(SpringLayout.WEST, panel_2, 67, SpringLayout.WEST, panel_1);
-		sl_panel_1.putConstraint(SpringLayout.SOUTH, panel_2, -10, SpringLayout.SOUTH, panel_1);
-		sl_panel_1.putConstraint(SpringLayout.EAST, panel_2, -282, SpringLayout.EAST, panel_1);
-		panel_1.add(panel_2);
-		panel_2.setLayout(new CardLayout(0, 0));
-		
-		JLabel label = new JLabel("1.");
-		label.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
-		label.setHorizontalAlignment(SwingConstants.CENTER);
-		panel_2.add(label, "name_326916481994731");
 		
 		JPanel panel_3 = new JPanel();
 		springLayout.putConstraint(SpringLayout.SOUTH, panel_1, -43, SpringLayout.NORTH, panel_3);
@@ -117,22 +104,21 @@ public class GeneralGUI {
 		SpringLayout sl_panel_3 = new SpringLayout();
 		panel_3.setLayout(sl_panel_3);
 		
-		JButton jbGenerEnd = new JButton("\uC885 \uB8CC");
+		JButton jbGenerEnd = new JButton("\uB85C\uADF8\uC544\uC6C3");
+		jbGenerEnd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.dispose();
+				LoginGUI logG = new LoginGUI();
+				logG.main(null); //general¸ðµå ·Î±×¾Æ¿ô
+				
+			}
+		});
 		sl_panel_3.putConstraint(SpringLayout.NORTH, jbGenerEnd, 10, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.WEST, jbGenerEnd, 129, SpringLayout.WEST, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.WEST, jbGenerEnd, 95, SpringLayout.WEST, panel_3);
 		sl_panel_3.putConstraint(SpringLayout.SOUTH, jbGenerEnd, -10, SpringLayout.SOUTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.EAST, jbGenerEnd, -37, SpringLayout.EAST, panel_3);
+		sl_panel_3.putConstraint(SpringLayout.EAST, jbGenerEnd, -71, SpringLayout.EAST, panel_3);
 		jbGenerEnd.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
 		panel_3.add(jbGenerEnd);
-		
-		JLabel label_1 = new JLabel("2.");
-		sl_panel_3.putConstraint(SpringLayout.EAST, label_1, -20, SpringLayout.WEST, jbGenerEnd);
-		sl_panel_3.putConstraint(SpringLayout.WEST, label_1, 70, SpringLayout.WEST, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.NORTH, label_1, 10, SpringLayout.NORTH, panel_3);
-		sl_panel_3.putConstraint(SpringLayout.SOUTH, label_1, -10, SpringLayout.SOUTH, panel_3);
-		label_1.setHorizontalAlignment(SwingConstants.CENTER);
-		label_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 24));
-		panel_3.add(label_1);
 		
 		
 	}
