@@ -68,7 +68,7 @@ public class SearchGUI_1 {
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 
-		JLabel label = new JLabel("\uC870     \uD68C");
+		JLabel label = new JLabel("\uC804\uCCB4\uC870\uD68C");
 		label.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		label.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(label, "name_11531351470090");
@@ -96,24 +96,22 @@ public class SearchGUI_1 {
 
 
 		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(12, 125, 666, 32);
+		panel_3.setBounds(12, 125, 611, 32);
 		frame.getContentPane().add(panel_3);
+		panel_3.setLayout(null);
 
 		JLabel lblNewLabel_1 = new JLabel("\uC870\uD68C\uBAA9\uB85D");
+		lblNewLabel_1.setBounds(0, 0, 666, 32);
 		lblNewLabel_1.setFont(new Font("±¼¸²", Font.PLAIN, 22));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		GroupLayout gl_panel_3 = new GroupLayout(panel_3);
-		gl_panel_3.setHorizontalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel_1,
-				GroupLayout.PREFERRED_SIZE, 666, GroupLayout.PREFERRED_SIZE));
-		gl_panel_3.setVerticalGroup(gl_panel_3.createParallelGroup(Alignment.LEADING).addComponent(lblNewLabel_1,
-				GroupLayout.PREFERRED_SIZE, 32, GroupLayout.PREFERRED_SIZE));
-		panel_3.setLayout(gl_panel_3);
+		panel_3.add(lblNewLabel_1);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(12, 167, 666, 379);
 		frame.getContentPane().add(scrollPane);
 
 		JButton btnNewButton = new JButton("\uC870\uD68C\uD558\uAE30");
+		btnNewButton.setBounds(445, 77, 119, 32);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) { // Á¶È¸ÇÏ±â ¹öÆ° ¾×¼Ç
 				SearchDAO searchD = new SearchDAO(); // DB¶û ¿¬µ¿ÇÏ±âÀ§ÇÑ °´Ã¼ »ý¼º
@@ -148,7 +146,10 @@ public class SearchGUI_1 {
 
 		});
 		btnNewButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));
-		btnNewButton.setBounds(445, 77, 119, 32);
 		frame.getContentPane().add(btnNewButton);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBounds(0, 0, 694, 572);
+		frame.getContentPane().add(panel_4);
 	}
 }
