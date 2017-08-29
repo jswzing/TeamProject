@@ -70,7 +70,7 @@ public class InfoGUI {
 		backGround.add(panel_1_name);
 		panel_1_name.setLayout(new CardLayout(0, 0));
 
-		JLabel lblNewLabel_7 = new JLabel("\uC774\uB984");
+		JLabel lblNewLabel_7 = new JLabel("*\uC774\uB984 ");
 		lblNewLabel_7.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_7.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_1_name.add(lblNewLabel_7, "name_7411558898245");
@@ -80,7 +80,7 @@ public class InfoGUI {
 		backGround.add(panel_Type);
 		panel_Type.setLayout(new CardLayout(0, 0));
 
-		JLabel label_1 = new JLabel("\uC885");
+		JLabel label_1 = new JLabel("*\uC885 ");
 		label_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		label_1.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_Type.add(label_1, "name_7381087228229");
@@ -139,7 +139,7 @@ public class InfoGUI {
 		backGround.add(panel_9_sex);
 		panel_9_sex.setLayout(new CardLayout(0, 0));
 
-		JLabel lblNewLabel_6 = new JLabel("\uC131\uBCC4");
+		JLabel lblNewLabel_6 = new JLabel("*\uC131\uBCC4 ");
 		lblNewLabel_6.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
 		panel_9_sex.add(lblNewLabel_6, "name_7432614689786");
@@ -234,11 +234,11 @@ public class InfoGUI {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		JPanel idpanel = new JPanel();
-		idpanel.setBounds(360, 62, 73, 30);
+		idpanel.setBounds(360, 62, 81, 30);
 		backGround.add(idpanel);
 		idpanel.setLayout(new CardLayout(0, 0));
 
-		JLabel lblNewLabel_1 = new JLabel("\uB4F1\uB85D\uBC88\uD638");
+		JLabel lblNewLabel_1 = new JLabel("*\uB4F1\uB85D\uBC88\uD638");
 		lblNewLabel_1.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 17));
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		idpanel.add(lblNewLabel_1, "name_509624414968705");
@@ -302,7 +302,7 @@ public class InfoGUI {
 
 		JPanel panel = new JPanel();
 		panel.setBorder(new BevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		panel.setBounds(446, 62, 120, 30);
+		panel.setBounds(456, 62, 110, 30);
 		backGround.add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 

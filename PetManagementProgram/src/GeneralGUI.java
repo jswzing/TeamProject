@@ -65,7 +65,7 @@ public class GeneralGUI {
 		frame.getContentPane().add(panel);
 		panel.setLayout(new CardLayout(0, 0));
 		
-		JLabel jlbGeneralSearchTitle = new JLabel("\uC77C\uBC18\uC0AC\uC6A9\uC790 \uC870\uD68C");
+		JLabel jlbGeneralSearchTitle = new JLabel("\uD504\uB85C\uADF8\uB7A8\uAD00\uB9AC\uBA54\uB274");
 		jlbGeneralSearchTitle.setBackground(new Color(240, 240, 240));
 		jlbGeneralSearchTitle.setFont(new Font("¸¼Àº °íµñ", Font.BOLD, 28));
 		jlbGeneralSearchTitle.setHorizontalAlignment(SwingConstants.CENTER);
