@@ -219,7 +219,7 @@ public class DeleteGUI {
 						ModifyDAO modi = new ModifyDAO();
 						ModifyGUI infog = new ModifyGUI(serialNumber);
 						infog.main(serialNumber);
-						
+						frame.dispose();
 					}
 				});
 				modifyButton.setFont(new Font("¸¼Àº °íµñ", Font.PLAIN, 18));

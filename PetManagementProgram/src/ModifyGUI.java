@@ -367,6 +367,8 @@ public class ModifyGUI {
 							etcInput.getText().toString(), taGuardianName.getText().toString(),
 							taGuardianPhone.getText().toString(), taGaurdianAdr.getText().toString());
 					frame.dispose();
+					DeleteGUI deleGG = new DeleteGUI();
+					deleGG.main(null);
 				}
 			});
 		}
